@@ -1,0 +1,58 @@
+.nav {
+    flex-basis: 20%;
+    height: 100%;
+    padding: 20px;
+}
+
+/* user__item */
+
+.user__item{
+    display: flex;
+    align-items: flex-end;
+    margin-top: 30%;
+}
+
+.user__item-image {
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    border-radius: 50%;
+}
+
+.user__item span {
+    padding-right: 10px;
+}
+
+/* event__item */
+
+.event__item {
+    position: relative;
+    margin-top: 20%;
+}
+
+.add__event {
+
+    position: absolute;
+    top: 0;
+    left: 100px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+    border-radius: 15px;
+}
+
+.add__event-close{
+    
+    width: 40px;
+    height: 40px;
+    border: 1px solid red;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    transform: translate(295px, -55px)
+}
+
+.link{
+    color: black;
+    text-decoration: none;
+}

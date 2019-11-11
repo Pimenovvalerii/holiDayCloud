@@ -1,0 +1,9 @@
+.registration-form{
+    position: absolute;
+    top: 0;
+    left: -200px;
+    max-width: 300px;
+    padding: 20px;
+    border: 1px solid red;
+    box-sizing: border-box;
+}

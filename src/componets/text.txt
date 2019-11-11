@@ -1,0 +1,22 @@
+getDayNum(eventData) {
+    eventData.setMilliseconds(0);
+    eventData.setSeconds(0);
+    eventData.setMinutes(0);
+    eventData.setHours(0);
+
+    return eventData.getTime() / 1000 / 60 / 60 / 24;
+  }
+
+testFn() {
+    const itemData = new Date().toISOString();
+    const eventData = new Date(itemData);
+
+    console.log(
+      this.getDayNum(eventData),
+      this.getDayNum(new Date('11.11.2019')),
+    ); 
+
+    if(this.state.items.data === Date.now()) {
+
+    }
+}

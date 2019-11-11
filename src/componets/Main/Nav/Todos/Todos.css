@@ -1,0 +1,38 @@
+.todo-app {
+  max-width: 500px;
+  padding: 10px;
+  position: absolute;
+  top: -30px;
+  left: 100px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid red;
+  border-radius: 15px;
+}
+
+.app-header {
+  display: flex;
+}
+
+.app-header-item {
+  border: 1px solid red;
+  width: 100%;
+  text-align: center;
+}
+
+.app-header-item:nth-child(1){
+  border-right: hidden;
+}
+
+.my-event {
+  border : 1px solid red;
+  border-top: hidden;
+  padding: 10px;
+}
+
+.all-event {
+  border : 1px solid red;
+  border-top: hidden;
+  padding: 10px;
+  /* height: 300px; */
+}
