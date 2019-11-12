@@ -1,9 +1,26 @@
 .registration-form{
     position: absolute;
     top: 0;
-    left: -200px;
+    left: -255px;
     max-width: 300px;
     padding: 20px;
     border: 1px solid red;
     box-sizing: border-box;
+}
+
+.input_name {
+    width: 260px;
+    border: 1px solid red;
+    padding: 5px;
+    border-radius: 12px;
+    margin: 5px 0;
+}
+
+.input input {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color:white;
+    outline:none;
+    
+    
 }

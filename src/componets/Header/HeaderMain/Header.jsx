@@ -16,12 +16,12 @@ export default class Header extends React.Component {
             <div className="header"> 
                
                <div>
-                   {/* Заголовок */}
-                   this.props.isOnline: {`${this.props.isOnline}`} <br/>
-                   this.props.user: {this.props.user ? 'true' : 'false'}
+                   Запомнить все
+                   {/* this.props.isOnline: {`${this.props.isOnline}`} <br/> */}
+                   {/* this.props.user: {this.props.user ? 'true' : 'false'} */}
                 </div>
                 
-               <div className="form">
+               <div>
 
                     <Entrance 
                         login={this.props.login}

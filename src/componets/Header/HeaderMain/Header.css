@@ -5,3 +5,8 @@
     align-items: center;
 }
 
+.form__box{
+    display:flex;
+
+}
+

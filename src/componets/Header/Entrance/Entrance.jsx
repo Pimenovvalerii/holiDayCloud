@@ -29,11 +29,11 @@ export default class Entrance extends React.Component {
                 hidden={this.props.hidden}
             > 
                 <div hidden={!this.state.login}>
-                {this.state.registration 
-                    ? <button 
-                        onClick={()=>this.setState({
-                            registration:!this.state.registration,
-                        })}
+                    {this.state.registration 
+                    ? <button className="register_button"
+                                onClick={()=>this.setState({
+                                    registration:!this.state.registration,
+                                })}
                     >
                         Регистрация
                     </button>
@@ -45,10 +45,10 @@ export default class Entrance extends React.Component {
                </div>
                <div hidden={!this.state.registration}>
                     {this.state.login 
-                    ? <button 
-                        onClick={()=>this.setState({
-                            login:!this.state.login
-                        })}
+                    ? <button className="login_button"
+                                onClick={()=>this.setState({
+                                    login:!this.state.login
+                                })}
                     > 
                         Войти 
                     </button> 

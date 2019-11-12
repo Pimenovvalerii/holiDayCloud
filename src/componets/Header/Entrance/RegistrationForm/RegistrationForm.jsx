@@ -86,15 +86,29 @@ export default class RegistrationForm extends React.Component {
     render(){
 
         return(
-            <div  className="registration-form">
-                <div><input onChange={this.onChangeName} placeholder="Имя"/></div>
-                <div><input onChange={this.onChangeSurname} placeholder="Фамилия"/></div>
-                <div><input onChange={this.onChangePhone} placeholder="Телефон"/></div>
-                <div><input onChange={this.onChangePassword} placeholder="пароль"/></div>
-                <div>
+            <div  className="registration-form ">
+                <div className="input_name input">
+                    <input onChange={this.onChangeName} 
+                            placeholder="Имя"/>
+                </div>
+                <div className='input_name input'>
+                    <input  onChange={this.onChangeSurname} 
+                            placeholder="Фамилия"/>
+                </div>
+                <div className='input_name input'>
+                    <input onChange={this.onChangePhone} 
+                            placeholder="Телефон"/>
+                </div>
+                <div className='input_name input'>
+                    <input onChange={this.onChangePassword} 
+                            placeholder="пароль"/>
+                </div>
+                <div className='input_name input'>
                     <input onChange={this.onChangeData} type="date" />
                 </div>
-                <button onClick={this.onSubmitFn.bind(this)}>Зарегистрироваться</button>
+                <button onClick={this.onSubmitFn.bind(this)}>
+                    Зарегистрироваться
+                </button>
             </ div>
         )
     }
