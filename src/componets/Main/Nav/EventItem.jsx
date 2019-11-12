@@ -1,7 +1,6 @@
 import React from 'react';
 import {
     BrowserRouter as Router,
-    Switch,
     Route,
     Link
   } from "react-router-dom";
@@ -14,6 +13,7 @@ function EventItem(props){
         if(props.user){
             return <Todos 
             user={props.user}
+            login={props.login}
             />
         } else {
             const array= []

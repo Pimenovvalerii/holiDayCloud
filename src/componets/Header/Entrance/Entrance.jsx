@@ -6,13 +6,13 @@ import './Entrance.css';
 
 
 export default class Entrance extends React.Component {
+    constructor(props){
+        super(props);
 
-   
-    componentWillMount(){
-        this.setState({
+        this.state = {
             login:!this.props.isOnline,
             registration:!this.props.isOnline,
-        })
+        }
     }
     reset(){
         this.setState({

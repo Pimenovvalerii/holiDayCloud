@@ -11,7 +11,7 @@ export default class Header extends React.Component {
     render(){
         const condition = this.props.user ? true : false
 
-        console.log( 'header renret with '+JSON.stringify(this.props), condition )
+        // console.log( 'header renret with '+JSON.stringify(this.props), condition )
         return(
             <div className="header"> 
                

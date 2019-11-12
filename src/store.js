@@ -1,11 +1,12 @@
 /* eslint-disable default-case */
-import { createStore, applyMiddleware } from 'redux';
+import { createStore } from 'redux';
 // import reducer from './reducers';
 // import { loggerMiddleware, checkboxMiddleware } from './middlewares';
 
 function appReducer(state, action){
     switch(action.type) {
-        case 'LOGIN' :            
+        case 'LOGIN' :  
+        console.log('Action LOGIN', action.value)          
         return {
             ...state,
             user: action.value
