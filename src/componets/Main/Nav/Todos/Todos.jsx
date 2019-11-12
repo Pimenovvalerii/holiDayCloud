@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 
 import './Todos.css';
 
+import holidays from '../../Content/holidays';
+
 
 export default class Todos extends Component {
 
@@ -16,12 +18,6 @@ export default class Todos extends Component {
   constructor(props){
     super(props);
     this.state = {
-      // items: [
-      //   { id: 1, label: 'День Рождения Бабушки', },
-      //   // { id: 2, label: 'НГ',  },
-      //   // { id: 3, label: 'Имя Фамилия', data: 2000.02.05 }
-        
-      // ],
       items : this.props.user? this.props.user.array: [],
       search: '',
       event : false,
@@ -38,9 +34,14 @@ export default class Todos extends Component {
   onItemAdded = (label, name, surname, data, textarea) => {
     const item = this.createItem(label, name, surname, data, textarea);
       item.id = Math.floor(Math.random()*1000000);
-    const local = this.props.user;
+    const local = JSON.parse(localStorage.getItem(this.props.user.phone));
     local.array.push(item)
     localStorage.setItem(this.props.user.phone, JSON.stringify(local)) 
+
+
+    //action
+    this.props.login(local)
+
 
     // this.setState((state) => {
     //   return { items: [...state.items, item] };
@@ -68,8 +69,11 @@ export default class Todos extends Component {
     })
     localStorage.setItem(this.props.user.phone, JSON.stringify(local))
 
-    console.log(id)
-    console.log(local.array)
+    // console.log(id)
+    // console.log(local.array)
+    //action
+    this.props.login(local)
+
     this.setState((state) => {
       const idx = state.items.findIndex((item) => item.id === id);
       const items = [
@@ -117,7 +121,13 @@ export default class Todos extends Component {
   render() {
     const { items, search , event } = this.state;
     const visibleItems = this.searchItems(items, search);
-    // console.log(this.props.props)
+    const elements = holidays.map((item) => {
+       return (
+        <li key={item.data} className="list-group-item">
+            {`${new Date(item.data).toLocaleDateString('ru-RU', { weekday: 'long',  month: 'long', day: 'numeric' })} ${item.label} ${item.textarea}`}
+        </li>
+      );
+    });
 
     return (
       <div className="todo-app ">
@@ -173,9 +183,9 @@ export default class Todos extends Component {
 
         <div className="all-event"
             hidden={!this.state.switchEvent}>
-          <div>
-            all event
-          </div>
+          <ul className="todo-list list-group">
+          {elements}
+          </ul>
         </div>
         
         
@@ -184,3 +194,7 @@ export default class Todos extends Component {
     );
   };
 }
+
+
+
+
