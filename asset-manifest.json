@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/holiDayCloud/static/css/main.1f71cf04.chunk.css",
-    "main.js": "/holiDayCloud/static/js/main.9635fc47.chunk.js",
-    "main.js.map": "/holiDayCloud/static/js/main.9635fc47.chunk.js.map",
+    "main.css": "/holiDayCloud/static/css/main.2cfc5559.chunk.css",
+    "main.js": "/holiDayCloud/static/js/main.f1537671.chunk.js",
+    "main.js.map": "/holiDayCloud/static/js/main.f1537671.chunk.js.map",
     "runtime-main.js": "/holiDayCloud/static/js/runtime-main.2f1595f3.js",
     "runtime-main.js.map": "/holiDayCloud/static/js/runtime-main.2f1595f3.js.map",
-    "static/js/2.a56b653b.chunk.js": "/holiDayCloud/static/js/2.a56b653b.chunk.js",
-    "static/js/2.a56b653b.chunk.js.map": "/holiDayCloud/static/js/2.a56b653b.chunk.js.map",
+    "static/js/2.65ba5272.chunk.js": "/holiDayCloud/static/js/2.65ba5272.chunk.js",
+    "static/js/2.65ba5272.chunk.js.map": "/holiDayCloud/static/js/2.65ba5272.chunk.js.map",
     "index.html": "/holiDayCloud/index.html",
-    "precache-manifest.0d9b3ce0e4e5014e3a030905e0ce95c3.js": "/holiDayCloud/precache-manifest.0d9b3ce0e4e5014e3a030905e0ce95c3.js",
+    "precache-manifest.1428b4396bc1a6e7db93ba09c22f0aac.js": "/holiDayCloud/precache-manifest.1428b4396bc1a6e7db93ba09c22f0aac.js",
     "service-worker.js": "/holiDayCloud/service-worker.js",
-    "static/css/main.1f71cf04.chunk.css.map": "/holiDayCloud/static/css/main.1f71cf04.chunk.css.map",
+    "static/css/main.2cfc5559.chunk.css.map": "/holiDayCloud/static/css/main.2cfc5559.chunk.css.map",
     "static/media/App.css": "/holiDayCloud/static/media/main-image.02063d33.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.2f1595f3.js",
-    "static/js/2.a56b653b.chunk.js",
-    "static/css/main.1f71cf04.chunk.css",
-    "static/js/main.9635fc47.chunk.js"
+    "static/js/2.65ba5272.chunk.js",
+    "static/css/main.2cfc5559.chunk.css",
+    "static/js/main.f1537671.chunk.js"
   ]
 }
