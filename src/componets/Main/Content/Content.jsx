@@ -7,7 +7,7 @@ import holidays from './holidays';
 export default class Content extends React.Component {
 
     render(){
-            const today = new Date;
+            const today = new Date();
             let dates = {}
 
             if(this.props.user){
