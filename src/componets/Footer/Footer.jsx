@@ -15,7 +15,7 @@ export default class Footer extends React.Component {
 
         return (
             <div className="footer">
-                Footer {this.props.user}
+                {/* Footer {this.props.user} */}
             </div>
         )
     }

@@ -10,51 +10,66 @@ export default class Entrance extends React.Component {
         super(props);
 
         this.state = {
-            login:!this.props.isOnline,
-            registration:!this.props.isOnline,
+            loginSwitch: true,
+            registSwitch: true,
+            login:true,
+            registration:true,
         }
+        this.closeRegistrationForm = this.closeRegistrationForm.bind(this);
+        this.closeLoginForm = this.closeLoginForm.bind(this);
+        
     }
-    reset(){
-        this.setState({
-            login:!this.props.isOnline,
-            registration:!this.props.isOnline,
+    
+    closeRegistrationForm(){
+        this.setState((state)=>{
+            return { 
+                registSwitch : !state.registSwitch,
+                login : !state.login
+            }
+        })
+    }
+
+    closeLoginForm(){
+        this.setState((state)=>{
+            return {
+                loginSwitch:!state.loginSwitch,
+                registration :!state.registration
+            }
         })
     }
    
     render(){
+
+        // console.log(this.props.objUser)
         
         return(
-            <div 
-                className="entrance"
-                hidden={this.props.hidden}
+            <div  className="entrance" 
+                    hidden={this.props.hidden}
             > 
-                <div hidden={!this.state.login}>
-                    {this.state.registration 
+
+                <div hidden={!this.state.registration}>
+                    {this.state.registSwitch 
                     ? <button className="register_button"
-                                onClick={()=>this.setState({
-                                    registration:!this.state.registration,
-                                })}
+                                onClick={this.closeRegistrationForm}
                     >
                         Регистрация
                     </button>
                     
-                    : <RegistrationForm 
-                        login={this.props.login}
-                        reset={this.reset.bind(this)}
+                    : <RegistrationForm                             
+                                closeRegistrationForm={this.closeRegistrationForm}
+                                exit={this.props.exit}
                     /> }
                </div>
-               <div hidden={!this.state.registration}>
-                    {this.state.login 
-                    ? <button className="login_button"
-                                onClick={()=>this.setState({
-                                    login:!this.state.login
-                                })}
+               <div hidden={!this.state.login}>
+                    {this.state.loginSwitch 
+                    ? <button className="login_button"                               
+                                onClick={this.closeLoginForm}
                     > 
                         Войти 
                     </button> 
-                    : <LoginForm
-                        login={this.props.login}
-                        reset={this.reset.bind(this)}
+                    : <LoginForm                       
+                            closeLoginForm={this.closeLoginForm}
+                            exit={this.props.exit}
                     />}
                </div>
                                 

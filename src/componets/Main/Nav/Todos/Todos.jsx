@@ -3,8 +3,10 @@ import React, { Component } from 'react';
 import TodoList from './TodoList';
 import SearchPanel from './SearchPanel';
 import ItemAddForm from './ItemAddForm';
+import ReturnButton from '../../../ReturnButton';
 
-import { Link } from "react-router-dom";
+
+// import { Link } from "react-router-dom";
 
 import './Todos.css';
 
@@ -18,7 +20,7 @@ export default class Todos extends Component {
   constructor(props){
     super(props);
     this.state = {
-      items : this.props.user? this.props.user.array: [],
+      items : this.props.user? this.props.objUser.array: [],
       search: '',
       event : false,
       switchEvent : false,
@@ -31,12 +33,14 @@ export default class Todos extends Component {
   
   
 
-  onItemAdded = (label, name, surname, data, textarea) => {
+onItemAdded = (label, name, surname, data, textarea) => {
+
+    const {phone} = this.props.objUser
     const item = this.createItem(label, name, surname, data, textarea);
-      item.id = Math.floor(Math.random()*1000000);
-    const local = JSON.parse(localStorage.getItem(this.props.user.phone));
+    item.id = Math.floor(Math.random()*1000000);
+    const local = JSON.parse(localStorage.getItem(phone));
     local.array.push(item)
-    localStorage.setItem(this.props.user.phone, JSON.stringify(local)) 
+    localStorage.setItem(phone, JSON.stringify(local)) 
 
 
     //action
@@ -46,79 +50,77 @@ export default class Todos extends Component {
     // this.setState((state) => {
     //   return { items: [...state.items, item] };
     // })
+};
+
+createItem(label, name, surname, data, textarea) {
+  return {
+    label,
+    name, 
+    surname, 
+    data, 
+    textarea,      
   };
-
-  createItem(label, name, surname, data, textarea) {
-    return {
-      label,
-      name, 
-      surname, 
-      data, 
-      textarea,      
-    };
-  }
+}
 
 
-  onDelete = (id) => {
-
-    const local = JSON.parse(localStorage.getItem(this.props.user.phone));
-    local.array.forEach( (el,ind) => {
-      if(el.id === id){
-        local.array.splice(ind,1)
-      }
-    })
-    localStorage.setItem(this.props.user.phone, JSON.stringify(local))
-
-    // console.log(id)
-    // console.log(local.array)
-    //action
-    this.props.login(local)
-
-    this.setState((state) => {
-      const idx = state.items.findIndex((item) => item.id === id);
-      const items = [
-        ...state.items.slice(0, idx),
-        ...state.items.slice(idx + 1)
-      ];
-      return { items };
-    });
-  };
-
-  onSearchChange = (search) => {
-    this.setState({ search });
-  };
-
-  searchItems(items, search) {
-    if (search.length === 0) {
-      return items;
+onDelete = (id) => {
+  const {phone} = this.props.objUser
+  const local = JSON.parse(localStorage.getItem(phone));
+  local.array.forEach( (el,ind) => {
+    if(el.id === id){
+      local.array.splice(ind,1)
     }
+  })
+  localStorage.setItem(phone, JSON.stringify(local))
 
-    return items.filter((item) => {
-      return item.label.toLowerCase().indexOf(search.toLowerCase()) > -1;
-    });
+    
+  this.props.login(local)
+
+  this.setState((state) => {
+    const idx = state.items.findIndex((item) => item.id === id);
+    const items = [
+      ...state.items.slice(0, idx),
+      ...state.items.slice(idx + 1)
+    ];
+    return { items };
+  });
+};
+
+onSearchChange = (search) => {
+  this.setState({ search });
+};
+
+searchItems(items, search) {
+  if (search.length === 0) {
+    return items;
   }
 
-  onClickEvent(){
-    this.setState( (state)=>{
-      return {
-        event : !state.event
-      }
-    })
-  }
+  return items.filter((item) => {
+     return item.label.toLowerCase().indexOf(search.toLowerCase()) > -1;
+  });
+}
 
-  switchEventAll(){
-    this.setState( {
-      switchEvent : true,
-    })
-  }
+onClickEvent(){
+  this.setState( (state)=>{
+    return {
+      event : !state.event
+    }
+  })
+}
 
-  switchEventMy(){
-    this.setState( {
-      switchEvent : false,
-    })
-  }
+switchEventAll(){
+  this.setState( {
+    switchEvent : true,
+  })
+}
 
-  render() {
+switchEventMy(){
+  this.setState( {
+    switchEvent : false,
+  })
+}
+
+render() {
     const { items, search , event } = this.state;
     const visibleItems = this.searchItems(items, search);
     const elements = holidays.map((item) => {
@@ -130,46 +132,53 @@ export default class Todos extends Component {
     });
 
     return (
-      <div className="todo-app ">
+      <div className="todos"
+            hidden={this.props.hidden}>
 
-        <div className="add__event-close">
-          <Link to="/" className="link">Close</Link>
-        </div>
+        <div className="close__todos">
+          <ReturnButton returnButton={this.props.eventSwitch}/>
+        </div> 
+
         
-        <div className="app-header">
+        <div className="todos-header">
 
-          <div className="app-header-item"
+          <div className="todos-header-item"
                 onClick={this.switchEventMy.bind(this)}
                 style={ {borderBottom : this.state.switchEvent ? "1px solid red" :"hidden" }}>
-            Мои собития 
+            Мои события 
           </div>
-          <div className="app-header-item"
+          <div className="todos-header-item"
               onClick={this.switchEventAll.bind(this)}
               style={ {borderBottom : this.state.switchEvent ? "hidden": "1px solid red"  }}>
-            Все собития
+            Все события
           </div>
         </div>
         {/* ----------------- */}
         
-        <div className="my-event"
+        <div className="my__event"
             hidden={this.state.switchEvent}>
 
-          <div className="add-form" 
+          <div className="my__event_form" 
               hidden={!event}>
               <ItemAddForm
                 onClickEvent={this.onClickEvent}
                 onItemAdded={this.onItemAdded} /> 
           </div>
 
-          <div className="app-box"
+          <div className="add_event"
                 hidden={event}>
 
-            <div onClick={this.onClickEvent}>
-              <div>+</div>
-              <div>Добавить собитие</div>             
+            <div className="add_event_button"
+                  onClick={this.onClickEvent}>
+              <div className="add_event_icon">
+                +
+              </div>
+              <div className="add_event_text">
+                Добавить событие
+              </div>             
             </div>
 
-            <div className="search-panel d-flex">
+            <div className="todos__search_panel">
               <SearchPanel
                 onSearchChange={this.onSearchChange}/>
             </div>

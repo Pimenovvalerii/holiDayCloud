@@ -1,9 +1,12 @@
-.search-panel {
-  margin: 1rem 0;
+.search-input {
+  width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color:rgb(3, 94, 30);
+    outline:none;
+    text-align: center;
+    padding-top: 5px;
+    cursor: pointer;
 }
 
-.search-panel .search-input {
-  width: auto;
-  flex-grow: 1;
-  margin-right: 3px;
-}
+

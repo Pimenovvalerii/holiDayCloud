@@ -1,27 +1,34 @@
 import React from 'react';
-
 import './RegistrationForm.css';
+import ReturnButton from '../../../ReturnButton';
+import {updateBin , readBin } from '../../../../apiJSONBin';
+
 
 export default class RegistrationForm extends React.Component {
 
 
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             name : null,
             surname : null,
             phone : null,
             password : null,
             data : null,
-            login : true,
-            array:[ ],
+            array:[],
+            error : null,
         }
+
+        // this.readBin = this.readBin.bind(this);
+        this.addLocalStorUser = this.addLocalStorUser.bind(this)
     }
 
+    _id = '5dcd5e7a2eea4763ad9ad3ba';
+
     onChangeName = (event) => {
-            this.setState({
-                name : event.target.value
-           })
+        this.setState({
+            name : event.target.value
+        })
     }
 
     onChangeSurname = (event) => {
@@ -32,23 +39,6 @@ export default class RegistrationForm extends React.Component {
 
     onChangePhone = (event) => {
         const value = event.target.value
-        // const valueStr = JSON.stringify(value)
-
-        // const num = localStorage;
-        // console.log( num);
-        
-        // for(let key in num){
-        //     console.log(key)
-            
-        // }
-            
-        
-        
-        // if(localStorage.valueStr === undefined ){
-        //     console.log(false)
-        // } else {
-        //     console.log(true)
-        // }
         this.setState({
             phone : value
        })
@@ -67,48 +57,84 @@ export default class RegistrationForm extends React.Component {
        })
     }
 
-    onSubmitFn() {
+    addLocalStorUser(){
         const localStorId = this.state.phone;
         localStorage.setItem(`${localStorId}`, JSON.stringify(this.state));
-        
-        this.props.login(this.state);
-        this.props.reset();
-        // if(localStorage.localStorId !== undefined){
-            
-        // }else {
-        //     console.log('такой user уже есть')
-        // }  
-        // localStorage.removeItem(localStorId);
-        
-        
+        localStorage.setItem(`users`, JSON.stringify({ user: this.state.phone }));
+        this.props.exit()
+        this.props.closeRegistrationForm();
+    }
+
+    onSubmitFn(){
+        const {phone} = this.state;
+
+        readBin(this._id)
+            .then( result => {
+
+                const arr = result.users.filter( el => {
+                    return el.phone === phone
+                })
+
+                if(arr.length === 0){
+                    console.log('можно создать акаунт ')
+                    result.users.push(this.state)
+
+                    updateBin(this._id,result)
+                        .then( res => {
+                            if(res.ok){
+                                this.addLocalStorUser();
+                            }else {
+                                this.setState({error :'ошибка сервера попробуйте еще раз'})
+                            }
+                        })                                               
+                        .catch( err => console.log(err))
+                } else {
+                    this.setState({error :'такой пользователь уже есть'})                           
+                    console.log('такой пользователь уже есть')
+                }
+            })
     }
 
     render(){
-
         return(
-            <div  className="registration-form ">
-                <div className="input_name input">
+            <div  className="registration_form ">
+                
+                <div className="close__registration_for">
+                    <ReturnButton returnButton={this.props.closeRegistrationForm}/>
+                </div>
+
+                <div className="regist__input blink1">
                     <input onChange={this.onChangeName} 
                             placeholder="Имя"/>
                 </div>
-                <div className='input_name input'>
+
+                <div className="regist__input blink2">
                     <input  onChange={this.onChangeSurname} 
                             placeholder="Фамилия"/>
                 </div>
-                <div className='input_name input'>
+                <div>{this.state.error }</div>
+                <div className="regist__input blink3">
+                    
                     <input onChange={this.onChangePhone} 
                             placeholder="Телефон"/>
                 </div>
-                <div className='input_name input'>
+
+                <div className="regist__input blink4">
                     <input onChange={this.onChangePassword} 
-                            placeholder="пароль"/>
+                            placeholder="Пароль"/>
                 </div>
-                <div className='input_name input'>
+
+                <div className="regist__input blink5">
                     <input onChange={this.onChangeData} type="date" />
                 </div>
-                <button onClick={this.onSubmitFn.bind(this)}>
-                    Зарегистрироваться
-                </button>
+
+                <div >
+                    <button className="regist__button"
+                            onClick={this.onSubmitFn.bind(this)}>
+                        Зарегистрироваться
+                    </button>
+                </div>
+                
             </ div>
         )
     }

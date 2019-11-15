@@ -1,47 +1,48 @@
 import React from 'react';
-import {
-    BrowserRouter as Router,
-    Route,
-    Link
-  } from "react-router-dom";
+import Todos from './Todos';
 
-import Todos from './Todos'
+export default class EventItem extends React.Component {
 
-function EventItem(props){
+    constructor(props){
+        super(props);
 
-    function hoc(){
-        if(props.user){
-            return <Todos 
-            user={props.user}
-            login={props.login}
-            />
-        } else {
-            const array= []
-            return <Todos array={array}/>
+        this.state ={
+            eventSwitch : false,
         }
+
+        this.eventSwitch = this.eventSwitch.bind(this);
         
     }
+
+    eventSwitch(){
+        this.setState( (state)=>{
+            return { eventSwitch : !state.eventSwitch}
+        })
+    }
   
-    return (
-        <Router >
+    render(){ 
+        return(       
             <div className="event__item">
-                <div>   
-                    <div>
-                        <Link to="/addevent" className="link"> Cобытия</Link>
+               
+                <div> 
+                    <div  onClick={this.eventSwitch}>                           
+                        События
                     </div>
-                    <div>
-                        <Link to="/about" className="link">Настройки</Link>
-                    </div>
-                    
-                    
+                        
+                    <Todos hidden={!this.state.eventSwitch}
+                            user={this.props.user}
+                            login={this.props.login}
+                            objUser={this.props.objUser}
+                            eventSwitch={this.eventSwitch}
+                    />
+                                                                      
                 </div>
-                
                 <div>
-                    <Route path="/addevent" exact component={hoc}/>
+                    <div>
+                        Настройки
+                    </div>
                 </div>
             </div>
-           
-        </Router>
-    )
+        )
+    }
 };
-export default EventItem;

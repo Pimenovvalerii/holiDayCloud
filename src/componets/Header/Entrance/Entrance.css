@@ -2,13 +2,17 @@
   /* display:flex; */
   position: relative;
   /* margin-left: 520px; */
+  
 }
 
 .register_button, .login_button {
   border-radius: 20px;
   background: radial-gradient(circle, rgba(103,152,116,1) 29%, rgba(50,98,64,1) 69%);
+  box-shadow: -1px -1px 29px 0px rgba(50, 50, 50, 1);
   border: hidden;
   color: white;
+  cursor: pointer;
+  outline: none;
 }
 
 .register_button {

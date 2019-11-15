@@ -1,34 +1,69 @@
-.todo-app {
-  max-width: 500px;
+.todos {
+  max-width: 320px;
+  /* height: 300px; */
   padding: 10px;
   position: absolute;
-  top: -30px;
+  top: 0;
   left: 100px;
-  width: 300px;
-  height: 300px;
+  left: 0;
   border: 1px solid red;
   border-radius: 15px;
+  box-sizing: border-box;
 }
 
-.app-header {
+.todos-header {
   display: flex;
 }
 
-.app-header-item {
+.todos-header-item {
   border: 1px solid red;
   width: 100%;
   text-align: center;
 }
 
-.app-header-item:nth-child(1){
+.todos-header-item:nth-child(1){
   border-right: hidden;
 }
 
-.my-event {
+.my__event {
+  /* margin-top: 10px; */
   border : 1px solid red;
   border-top: hidden;
   padding: 10px;
 }
+
+.add_event {
+  /* padding: 10px; */
+}
+
+.add_event_button {
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  border-bottom: 1px solid red;
+}
+
+.add_event_icon{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid red;
+  text-align: center;
+  line-height: 40px;
+  margin-right: 10px;
+}
+
+.todos__search_panel {
+  width: 220px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 12px;
+  margin: 10px 0;
+  box-shadow: -1px -1px 29px 0px rgba(50, 50, 50, 0.75);
+}
+
+
+
 
 .all-event {
   border : 1px solid red;

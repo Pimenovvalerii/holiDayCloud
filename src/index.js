@@ -13,11 +13,13 @@ const ConnectedApp = connect(
     // 1 Map State To Props
     (state) => ({
       user: state.user,
+      objUser : state.objUser,
     }),
     // 2 Map Dispatch To Props
     (dispatch) => ({
         // login:(value) => dispatch({ type: 'SWITCH_STATE', value}),
         login:(value) => dispatch({ type: 'LOGIN', value}),
+        exit: () => dispatch({ type: 'SWITCH_USERS',}),
     }),
   )(App);
 
