@@ -30,7 +30,7 @@ export default class EventItem extends React.Component {
                     </div>
                         
                     <Todos hidden={!this.state.eventSwitch}
-                            user={this.props.user}
+                            // user={this.props.user}
                             login={this.props.login}
                             objUser={this.props.objUser}
                             eventSwitch={this.eventSwitch}

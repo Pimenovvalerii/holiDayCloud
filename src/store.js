@@ -9,7 +9,7 @@ function appReducer(state, action){
         console.log('Action LOGIN', action.value)          
         return {
             ...state,
-            user: action.value
+            objUser: action.value
         }
         case 'SWITCH_USERS' :
             console.log('SWITCH_USERS', action.value)

@@ -20,7 +20,7 @@ export default class Todos extends Component {
   constructor(props){
     super(props);
     this.state = {
-      items : this.props.user? this.props.objUser.array: [],
+      items : this.props.objUser ? this.props.objUser.array: [],
       search: '',
       event : false,
       switchEvent : false,
@@ -33,7 +33,7 @@ export default class Todos extends Component {
   
   
 
-onItemAdded = (label, name, surname, data, textarea) => {
+  onItemAdded = (label, name, surname, data, textarea) => {
 
     const {phone} = this.props.objUser
     const item = this.createItem(label, name, surname, data, textarea);
@@ -121,6 +121,7 @@ switchEventMy(){
 }
 
 render() {
+
     const { items, search , event } = this.state;
     const visibleItems = this.searchItems(items, search);
     const elements = holidays.map((item) => {
@@ -130,6 +131,8 @@ render() {
         </li>
       );
     });
+
+    console.log(this.state.items)
 
     return (
       <div className="todos"
