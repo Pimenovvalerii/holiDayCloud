@@ -84,12 +84,12 @@ export default class RegistrationForm extends React.Component {
                             if(res.ok){
                                 this.addLocalStorUser();
                             }else {
-                                this.setState({error :'ошибка сервера попробуйте еще раз'})
+                                this.setState({error :'Ошибка сервера попробуйте еще раз'})
                             }
                         })                                               
-                        .catch( err => console.log(err))
+                        .catch( err => {this.setState({error : err})})
                 } else {
-                    this.setState({error :'такой пользователь уже есть'})                           
+                    this.setState({error :'Tакой пользователь уже зарегистрирован'})                           
                     console.log('такой пользователь уже есть')
                 }
             })
@@ -112,7 +112,9 @@ export default class RegistrationForm extends React.Component {
                     <input  onChange={this.onChangeSurname} 
                             placeholder="Фамилия"/>
                 </div>
-                <div>{this.state.error }</div>
+                <div className="regist__error">
+                    {this.state.error }
+                </div>
                 <div className="regist__input blink3">
                     
                     <input onChange={this.onChangePhone} 

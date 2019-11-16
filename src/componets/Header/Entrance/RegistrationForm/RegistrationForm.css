@@ -9,7 +9,14 @@
     /* box-sizing: border-box; */
     background: radial-gradient(circle, rgba(103,152,116,1) 29%, rgba(50,98,64,1) 69%);
     z-index: 1;
-    
+}
+
+.regist__error {
+    position: absolute;
+    top: 45px;
+    left: 30px;
+    color: rgb(194, 2, 2);
+    font-size: 14px;
 }
 
 .close__registration_for {
