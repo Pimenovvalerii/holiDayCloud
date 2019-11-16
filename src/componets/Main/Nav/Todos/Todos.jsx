@@ -34,7 +34,7 @@ export default class Todos extends Component {
   
   
 
-onItemAdded = (label, name, surname, data, textarea) => {
+  onItemAdded = (label, name, surname, data, textarea) => {
 
     const {phone} = this.props.objUser
     const item = this.createItem(label, name, surname, data, textarea);
@@ -137,6 +137,8 @@ render() {
         </li>
       );
     });
+
+    console.log(this.state.items)
 
     return (
       <div className="todos"
