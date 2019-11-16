@@ -20,7 +20,8 @@ export default class Todos extends Component {
   constructor(props){
     super(props);
     this.state = {
-      items : this.props.user? this.props.objUser.array: [],
+      // [items] should not be stored in  this.state
+      // items : this.props.objUser? this.props.objUser.array: [],
       search: '',
       event : false,
       switchEvent : false,
@@ -76,14 +77,17 @@ onDelete = (id) => {
     
   this.props.login(local)
 
-  this.setState((state) => {
-    const idx = state.items.findIndex((item) => item.id === id);
-    const items = [
-      ...state.items.slice(0, idx),
-      ...state.items.slice(idx + 1)
-    ];
-    return { items };
-  });
+  // [items] should not be stored in  this.state
+
+
+  // this.setState((state) => {
+  //   const idx = state.items.findIndex((item) => item.id === id);
+  //   const items = [
+  //     ...state.items.slice(0, idx),
+  //     ...state.items.slice(idx + 1)
+  //   ];
+  //   return { items };
+  // });
 };
 
 onSearchChange = (search) => {
@@ -121,7 +125,10 @@ switchEventMy(){
 }
 
 render() {
-    const { items, search , event } = this.state;
+    const { search , event } = this.state;
+
+    // [items] should not be stored in  this.state
+    const items = this.props.objUser? this.props.objUser.array: [];
     const visibleItems = this.searchItems(items, search);
     const elements = holidays.map((item) => {
        return (

@@ -14,7 +14,8 @@ export default class Main extends React.Component {
         return (
             <div className="main">
                 <Nav {...this.props}/>
-                <Content {...this.props} />
+                {/* <Content> only needs objUser as props */}
+                <Content user={this.props.objUser} />
             </div>
         )
     }

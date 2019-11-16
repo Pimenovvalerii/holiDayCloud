@@ -39,9 +39,9 @@ export default class Content extends React.Component {
             })
             return (
                 <div className="content">
-                    {/* <ContentItem event={sortedArr[0]} /> */}
-                    {/* <ContentItem event={sortedArr[1]} /> */}
-                    {/* <ContentItem event={sortedArr[2]} /> */}
+                    <ContentItem event={sortedArr[0]} />
+                    <ContentItem event={sortedArr[1]} />
+                    <ContentItem event={sortedArr[2]} />
                 </div>
             )
         
