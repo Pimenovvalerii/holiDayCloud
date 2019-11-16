@@ -50,7 +50,8 @@ export default class ItemAddForm extends Component {
 
           <input type="date"
                   value={this.state.data}
-                  onChange={this.onDataChange}/>
+                  onChange={this.onDataChange}
+                  required/>
           
           <input type="text"
                 className="form-control new-todo-label"
