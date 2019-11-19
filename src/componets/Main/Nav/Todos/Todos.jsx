@@ -138,7 +138,7 @@ render() {
       );
     });
 
-    console.log(this.state.items)
+    // console.log(this.state.items)
 
     return (
       <div className="todos"

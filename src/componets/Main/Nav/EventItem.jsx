@@ -1,5 +1,6 @@
 import React from 'react';
 import Todos from './Todos';
+import Settings from './Settings';
 
 export default class EventItem extends React.Component {
 
@@ -8,15 +9,22 @@ export default class EventItem extends React.Component {
 
         this.state ={
             eventSwitch : false,
+            settingsSwitch : false,
+
         }
 
         this.eventSwitch = this.eventSwitch.bind(this);
-        
+        this.settingsSwitch = this.settingsSwitch.bind(this);
     }
 
     eventSwitch(){
         this.setState( (state)=>{
             return { eventSwitch : !state.eventSwitch}
+        })
+    }
+    settingsSwitch(){
+        this.setState( (state)=>{
+            return { settingsSwitch : !state.settingsSwitch}
         })
     }
   
@@ -38,9 +46,16 @@ export default class EventItem extends React.Component {
                                                                       
                 </div>
                 <div>
-                    <div>
+                    <div
+                    onClick={this.settingsSwitch}
+                    >
                         Настройки
                     </div>
+                    <Settings
+                        {...this.props}
+                        hidden={!this.state.settingsSwitch}
+                        settingsSwitch={this.settingsSwitch}
+                    />
                 </div>
             </div>
         )

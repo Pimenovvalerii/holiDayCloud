@@ -55,11 +55,9 @@ function save(obj,id){
     .then(res => {
         res.users.forEach((el,i) => {
             if(el.phone===obj.phone){
-                console.log(el,obj)
                 res.users[i] = obj
             }
         });
-        console.log('2',res)
         updateBin(id,res)
     })
 }

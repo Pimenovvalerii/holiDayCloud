@@ -10,7 +10,6 @@ function appReducer(state, action){
         case 'LOGIN' :  
             console.log('Action LOGIN', action.value)          
             return {
-                ...state,
                 objUser: action.value
         }
         case 'SWITCH_USERS' :
@@ -51,9 +50,9 @@ function appReducer(state, action){
 const switcherMiddleware = (store) => (next) => {
     const users = JSON.parse(localStorage.getItem('users'));
     if(users){
-        console.log(users.user)
+        // console.log(users.user)
         const user = JSON.parse(localStorage.getItem(`${users.user}`));
-        console.log(user)
+        // console.log(user)
         next({ type: 'SWITCH_USERS', value : user })
     }
     

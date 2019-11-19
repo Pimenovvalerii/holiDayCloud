@@ -1,7 +1,7 @@
 import React from 'react';
 
 function UserItem(props){
-    
+    console.log('render with',props )
     return (
         <div className="user__item">
             
