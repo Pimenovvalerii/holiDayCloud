@@ -37,7 +37,9 @@ export default class Header extends React.Component {
                     </div>
                     
                     <Exit 
-                        exit={this.props.exit}
+                        {...this.props}
+                        // exit={this.props.exit}
+                        // save={this.props.save}
                         hidden={!condition}
                     />
                                    

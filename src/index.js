@@ -18,8 +18,9 @@ const ConnectedApp = connect(
     // 2 Map Dispatch To Props
     (dispatch) => ({
         // login:(value) => dispatch({ type: 'SWITCH_STATE', value}),
-        login:(value) => dispatch({ type: 'LOGIN', value}),
+        login: (value) => dispatch({ type: 'LOGIN', value}),
         exit: () => dispatch({ type: 'SWITCH_USERS',}),
+        save: (value) => dispatch({ type: 'SAVE', value}),
     }),
   )(App);
 

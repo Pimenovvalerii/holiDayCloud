@@ -50,5 +50,20 @@ function deleteBin(){
     .then( res => console.log( res))
 
 }
+function save(obj,id){
+    readBin(id)
+    .then(res => {
+        res.users.forEach((el,i) => {
+            if(el.phone===obj.phone){
+                console.log(el,obj)
+                res.users[i] = obj
+            }
+        });
+        console.log('2',res)
+        updateBin(id,res)
+    })
+}
 
-export {updateBin , readBin };
+
+
+export {updateBin , readBin ,save};
