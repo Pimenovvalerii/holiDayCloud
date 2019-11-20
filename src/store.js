@@ -7,11 +7,11 @@ import {save} from './apiJSONBin'
 
 function appReducer(state, action){
     switch(action.type) {
-        case 'LOGIN' :  
-            console.log('Action LOGIN', action.value)          
-            return {
-                objUser: action.value
-        }
+        // case 'LOGINc' :  
+        //     console.log('Action LOGIN', action.value)          
+        //     return {
+        //         objUser: action.value
+        // }
         case 'SWITCH_USERS' :
             console.log('SWITCH_USERS', action.value)
             return{

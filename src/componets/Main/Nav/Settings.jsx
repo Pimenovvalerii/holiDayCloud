@@ -4,23 +4,45 @@ import './Settings.css';
 
 export default class Settings extends React.Component {
 
+  constructor(props){
+    super(props)
+    this.state = {
+      user : this.props.objUser,
+      name:'',
+      surname:'',
+      password:'',
+      data:'',
+    }
+  }
+
   onChangeName(e){
-    this.user.name = e.target.value
+    this.setState({ name:e.target.value, user:{...this.state.user, name : e.target.value}})
   }
   onChangeSurname(e){
-    this.user.surname = e.target.value
+    this.setState({ surname:e.target.value, user:{...this.state.user, surname : e.target.value}})
+
   }
   onChangePassword(e){
-    this.user.password = e.target.value
+    this.setState({ password:e.target.value, user:{...this.state.user, password : e.target.value}})
+
   }
   onChangeDate(e){
-    this.user.data = e.target.value
+    this.setState({ data:e.target.value, user:{...this.state.user, data : e.target.value}})
+
   }
   saveChanges(){
-    this.props.login(this.user)
-    localStorage.setItem(this.user.phone,JSON.stringify(this.user));
+    const savedUser = {...this.props.objUser, ...this.state.user}
+    this.setState({
+      user:'',
+      name:'',
+      surname:'',
+      password:'',
+      data:'',
+    })
+    this.props.login(savedUser)//need?
+    localStorage.setItem(savedUser.phone,JSON.stringify(savedUser));
     this.props.exit()
-    this.props.save(this.user)
+    this.props.save(savedUser)
     this.close()
 
   }
@@ -29,7 +51,6 @@ export default class Settings extends React.Component {
   }
 
     render(){
-      this.user = this.props.objUser;
 
       return (
             <div 
@@ -42,25 +63,25 @@ export default class Settings extends React.Component {
                 >
                   x
                 </div>
-                {this.user ? this.props.objUser.name : "Имя"}
-                {this.props.objUser ? this.props.objUser.surname : "Фамилия"}
                 <input 
                   onChange={this.onChangeName.bind(this)} 
-                  // defaultValue={this.user ? this.props.objUser.name : "Имя"}
+                  value={this.state.name}
                   placeholder="Имя"
                 /> 
                 <input 
                   onChange={this.onChangeSurname.bind(this)} 
-                  // defaultValue={this.user ? this.props.objUser.surname : "Фамилия"}
+                  value={this.state.surname}
                   placeholder="Фамилия"
                 /> 
                 <input 
                   onChange={this.onChangePassword.bind(this)} 
                   placeholder="Пароль"
+                  value={this.state.password}
                 /> 
                 <input 
                   onChange={this.onChangeDate.bind(this)} 
                   type="date"
+                  value={this.state.data}
                 /> 
                 <button
                   onClick={this.saveChanges.bind(this)}                
