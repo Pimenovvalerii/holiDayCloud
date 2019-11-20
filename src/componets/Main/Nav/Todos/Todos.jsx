@@ -6,7 +6,6 @@ import ItemAddForm from './ItemAddForm';
 import ReturnButton from '../../../ReturnButton';
 
 
-// import { Link } from "react-router-dom";
 
 import './Todos.css';
 
@@ -46,6 +45,7 @@ export default class Todos extends Component {
 
     //action
     this.props.login(local)
+    this.props.save(local)
 
 
     // this.setState((state) => {
@@ -74,9 +74,9 @@ onDelete = (id) => {
   })
   localStorage.setItem(phone, JSON.stringify(local))
 
-    
+  //action
   this.props.login(local)
-
+  this.props.save(local)
   // [items] should not be stored in  this.state
 
 
@@ -138,7 +138,7 @@ render() {
       );
     });
 
-    console.log(this.state.items)
+    // console.log(this.state.items)
 
     return (
       <div className="todos"
@@ -153,7 +153,10 @@ render() {
 
           <div className="todos-header-item"
                 onClick={this.switchEventMy.bind(this)}
-                style={ {borderBottom : this.state.switchEvent ? "1px solid red" :"hidden" }}>
+                style={ {borderBottom : this.state.switchEvent ? "1px solid red" :"hidden" }}
+                hidden={!this.props.objUser}
+                >
+                  
             Мои события 
           </div>
           <div className="todos-header-item"
@@ -165,7 +168,7 @@ render() {
         {/* ----------------- */}
         
         <div className="my__event"
-            hidden={this.state.switchEvent}>
+            hidden={this.state.switchEvent || !this.props.objUser}>
 
           <div className="my__event_form" 
               hidden={!event}>
@@ -200,7 +203,7 @@ render() {
         {/* ----------- */}
 
         <div className="all-event"
-            hidden={!this.state.switchEvent}>
+            hidden={this.props.objUser? !this.state.switchEvent: this.props.objUser}>
           <ul className="todo-list list-group">
           {elements}
           </ul>

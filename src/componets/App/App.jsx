@@ -10,7 +10,7 @@ export default class App extends React.Component {
     render(){
 
         
-        // console.log('App component is rendered with',this.props.user )
+        console.log('App component is rendered with',this.props.objUser )
         return (
             <div className="app">
                 <Header  

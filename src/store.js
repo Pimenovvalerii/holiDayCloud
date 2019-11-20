@@ -3,19 +3,22 @@ import { createStore ,applyMiddleware } from 'redux';
 // import reducer from './reducers';
 // import { loggerMiddleware, checkboxMiddleware } from './middlewares';
 
+import {save} from './apiJSONBin'
+
 function appReducer(state, action){
     switch(action.type) {
         case 'LOGIN' :  
-        console.log('Action LOGIN', action.value)          
-        return {
-            ...state,
-            objUser: action.value
+            console.log('Action LOGIN', action.value)          
+            return {
+                objUser: action.value
         }
         case 'SWITCH_USERS' :
             console.log('SWITCH_USERS', action.value)
             return{
                 objUser : action.value
-            }
+        }
+        case 'SAVE' :
+            save(action.value,'5dcd5e7a2eea4763ad9ad3ba')
     }
 
     if (state) {
@@ -47,9 +50,9 @@ function appReducer(state, action){
 const switcherMiddleware = (store) => (next) => {
     const users = JSON.parse(localStorage.getItem('users'));
     if(users){
-        console.log(users.user)
+        // console.log(users.user)
         const user = JSON.parse(localStorage.getItem(`${users.user}`));
-        console.log(user)
+        // console.log(user)
         next({ type: 'SWITCH_USERS', value : user })
     }
     
