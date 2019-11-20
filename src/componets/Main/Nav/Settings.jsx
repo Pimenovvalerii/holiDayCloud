@@ -3,15 +3,6 @@ import './Settings.css';
 
 
 export default class Settings extends React.Component {
-  constructor(props){
-    super(props);
-
-    this.user = this.props.objUser;
-
-    this.state = {
-      hidden: this.props.hidden
-    }
-  }
 
   onChangeName(e){
     this.user.name = e.target.value
@@ -28,6 +19,8 @@ export default class Settings extends React.Component {
   saveChanges(){
     this.props.login(this.user)
     localStorage.setItem(this.user.phone,JSON.stringify(this.user));
+    this.props.exit()
+    this.props.save(this.user)
     this.close()
 
   }
@@ -36,11 +29,12 @@ export default class Settings extends React.Component {
   }
 
     render(){
-        
-        return (
+      this.user = this.props.objUser;
+
+      return (
             <div 
               className="settings"
-              hidden={this.props.hidden}
+              hidden={this.props.objUser ? this.props.hidden : true}
             >
                 <div 
                 className="settings-close"
@@ -48,13 +42,17 @@ export default class Settings extends React.Component {
                 >
                   x
                 </div>
+                {this.user ? this.props.objUser.name : "Имя"}
+                {this.props.objUser ? this.props.objUser.surname : "Фамилия"}
                 <input 
                   onChange={this.onChangeName.bind(this)} 
-                  placeholder={this.props.objUser ? this.props.objUser.name : "Имя"}
+                  // defaultValue={this.user ? this.props.objUser.name : "Имя"}
+                  placeholder="Имя"
                 /> 
                 <input 
                   onChange={this.onChangeSurname.bind(this)} 
-                  placeholder={this.props.objUser ? this.props.objUser.surname : "Фамилия"}
+                  // defaultValue={this.user ? this.props.objUser.surname : "Фамилия"}
+                  placeholder="Фамилия"
                 /> 
                 <input 
                   onChange={this.onChangePassword.bind(this)} 
