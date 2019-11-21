@@ -3,6 +3,15 @@ import './Settings.css';
 
 
 export default class Settings extends React.Component {
+  // constructor(props){
+  //   super(props);
+
+  //   this.user = this.props.objUser;
+
+  //   this.state = {
+  //     hidden: this.props.hidden
+  //   }
+  // }
 
   constructor(props){
     super(props)
@@ -55,7 +64,7 @@ export default class Settings extends React.Component {
       return (
             <div 
               className="settings"
-              hidden={this.props.objUser ? this.props.hidden : true}
+              hidden={this.props.hidden}
             >
                 <div 
                 className="settings-close"

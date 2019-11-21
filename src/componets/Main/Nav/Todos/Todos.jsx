@@ -44,7 +44,8 @@ export default class Todos extends Component {
 
 
     //action
-    this.props.login(local)
+    // this.props.login(local)
+    this.props.exit()
     this.props.save(local)
 
 
@@ -75,7 +76,8 @@ onDelete = (id) => {
   localStorage.setItem(phone, JSON.stringify(local))
 
   //action
-  this.props.login(local)
+  // this.props.login(local)
+  this.props.exit()
   this.props.save(local)
   // [items] should not be stored in  this.state
 
