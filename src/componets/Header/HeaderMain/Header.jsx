@@ -17,7 +17,7 @@ export default class Header extends React.Component {
         return(
             <div className="header"> 
             <div className="today">
-                Сегодня {(new Date).toLocaleString('ru-RU', { weekday: 'long',  month: 'long', day: 'numeric' })}
+                Сегодня {(new Date()).toLocaleString('ru-RU', { weekday: 'long',  month: 'long', day: 'numeric' })}
             </div>
                
                <div>
