@@ -16,6 +16,9 @@ export default class Header extends React.Component {
         // console.log( 'header renret with '+JSON.stringify(this.props), condition )
         return(
             <div className="header"> 
+            <div className="today">
+                Сегодня {(new Date).toLocaleString('ru-RU', { weekday: 'long',  month: 'long', day: 'numeric' })}
+            </div>
                
                <div>
                    Запомнить все

@@ -33,9 +33,7 @@ export default class App extends React.Component {
                     {...this.props}
                 />
                 <Footer 
-                    
-
-
+                    {...this.props}
                 />
             </div>
         )
