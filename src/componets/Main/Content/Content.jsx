@@ -15,20 +15,20 @@ export default class Content extends React.Component {
             today.setMinutes(0);
             today.setSeconds(0);
             today.setMilliseconds(0);
-            let dates = {}
 
             const events = this.props.user
                 ? this.props.user.array.concat(holidays)
                 : holidays;
 
-            events.forEach(el => {
-                const eventDay = new Date(el.data)
-                eventDay.setFullYear(today.getFullYear())
-                // eventDay-today => меньше - ближе(раньше в списке) if < 0   +31536000000 - год в мс
-                const dif = eventDay-today >= 0 ? eventDay-today : eventDay-today+31536000000
-                dates = {...dates, [dif]: el }
-            })
+                events.sort((a, b)=>{
+                        const d1 = new Date(a.data).setFullYear(today.getFullYear())
+                        const d2 = new Date(b.data).setFullYear(today.getFullYear())
+                        const dif1 = d1-today > 0 ? d1-today : d1-today + 31536000000
+                        const dif2 = d2-today > 0 ? d2-today : d2-today + 31536000000
+                    return dif1 - dif2
+                })
 
+<<<<<<< HEAD
             const sortedArr = []
             
             Object.keys(dates).sort(function compareNumbers(a, b) {
@@ -75,6 +75,13 @@ export default class Content extends React.Component {
                         <ContentItem event={sortedArr[2]} />
 
                     </Slider>
+=======
+            return (
+                <div className="content">
+                    <ContentItem event={events[0]} />
+                    <ContentItem event={events[1]} />
+                    <ContentItem event={events[2]} />
+>>>>>>> 0ddba8713000ea1521cbb9be8720671920250798
                 </div>
                 
                 // <div className="content">

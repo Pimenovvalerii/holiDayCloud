@@ -22,29 +22,20 @@ export default class Footer extends React.Component {
         today.setSeconds(0);
         today.setMilliseconds(0);
 
-        let dates = {}
-
         let events = this.props.objUser
             ? this.props.objUser.array.concat(holidays)
             : holidays;
+           
+        events.sort((a, b)=>{
+            const d1 = new Date(a.data).setFullYear(today.getFullYear())
+            const d2 = new Date(b.data).setFullYear(today.getFullYear())
+            const dif1 = d1-today > 0 ? d1-today : d1-today + 31536000000
+            const dif2 = d2-today > 0 ? d2-today : d2-today + 31536000000
 
-        events.forEach(el => {
-            let eventDay = new Date(el.data)
-            eventDay.setFullYear(today.getFullYear())
-            // eventDay-today => меньше - ближе(раньше в списке) if < 0   +31536000000 - год в мс
-            const dif = eventDay-today > 0 ? eventDay-today : eventDay-today+31536000000
-            dates = {...dates, [dif]: el }
+            return dif1 - dif2
         })
 
-        const sortedArr = []
-        
-        Object.keys(dates).sort(function compareNumbers(a, b) {
-            return a - b;
-          }).forEach((el)=>{
-            sortedArr.push(dates[el])
-        })        
-
-        const daysLeft = ~~((new Date(sortedArr[0].data) - today) / 1000 / 60 / 60 / 24 )// ms to day 
+        const daysLeft = ~~((new Date(events[0].data) - today) / 1000 / 60 / 60 / 24 )// ms to day 
 
         function days(daysLeft){
             switch (daysLeft % 10) {
@@ -54,14 +45,14 @@ export default class Footer extends React.Component {
                 case 4: return 'дня';
                 default: return 'дней';
             }}
-              let end =   (daysLeft < 10 || daysLeft > 20)? days(daysLeft) :'дней';        
-            
 
+        const end =   (daysLeft < 10 || daysLeft > 20)? days(daysLeft) :'дней';        
+            
         const message = daysLeft === 1
-                ? `${sortedArr[0].label} завтра`
+                ? `${events[0].label} завтра`
                 : daysLeft === 0
-                    ? `${sortedArr[0].label} сегодня`
-                    :`${sortedArr[0].label} через ${daysLeft} ${end} `
+                    ? `${events[0].label} сегодня`
+                    :`${events[0].label} через ${daysLeft} ${end} `
 
         return (
             <footer className="footer">
