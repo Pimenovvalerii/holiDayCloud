@@ -4,9 +4,21 @@
     justify-content: space-around;
     align-items: center;
 }
+.header-titlle {
+    font-size: 24px;
+    color: red;
+}
 
 .form__box{
     display:flex;
+
+}
+
+.today {
+    position: fixed;
+    top: 100px;
+    left: 50px;
+    color: red;
 
 }
 

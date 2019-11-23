@@ -144,74 +144,85 @@ render() {
 
     return (
       <div className="todos"
-            hidden={this.props.hidden}>
-
+            hidden={this.props.hidden}
+        >
+        
         <div className="close__todos">
-          <ReturnButton returnButton={this.props.eventSwitch}/>
+            <ReturnButton returnButton={this.props.eventSwitch}/>
         </div> 
 
-        
-        <div className="todos-header">
+        <div className="todos-wrapper">
+          <div className="todos-header">
 
-          <div className="todos-header-item"
-                onClick={this.switchEventMy.bind(this)}
-                style={ {borderBottom : this.state.switchEvent ? "1px solid red" :"hidden" }}
-                hidden={!this.props.objUser}
+            <div className="todos-header-item"
+                  onClick={this.switchEventMy.bind(this)}
+                  // style={ {borderBottom : this.state.switchEvent ? "1px solid red" :"hidden" }}
+                  style={ {boxShadow : this.state.switchEvent ? 
+                                      " 0px 0px 30px 5px rgba(103,152,116,1)" :
+                                      "0px 0px 20px 10px rgba(103,152,116,1)",
+                            color : this.state.switchEvent ? 'black': 'rgb(5, 75, 36)' }}
+                  hidden={!this.props.objUser}
+                  >
+                    
+              Мои события 
+            </div>
+            <div className="todos-header-item"
+                onClick={this.switchEventAll.bind(this)}
+                // style={ {borderBottom : this.state.switchEvent ? "hidden": "1px solid red"  }}
+                style={ {boxShadow : this.state.switchEvent ? 
+                                  "0px 0px 20px 10px rgba(103,152,116,1)" : 
+                                  " 0px 0px 30px 5px rgba(103,152,116,1)" ,
+                          color : this.state.switchEvent ? 'rgb(5, 75, 36)' :'black' }}
                 >
                   
-            Мои события 
+              Все события
+            </div>
           </div>
-          <div className="todos-header-item"
-              onClick={this.switchEventAll.bind(this)}
-              style={ {borderBottom : this.state.switchEvent ? "hidden": "1px solid red"  }}>
-            Все события
-          </div>
-        </div>
-        {/* ----------------- */}
-        
-        <div className="my__event"
-            hidden={this.state.switchEvent || !this.props.objUser}>
+          {/* ----------------- */}
+          
+          <div className="my__event"
+              hidden={this.state.switchEvent || !this.props.objUser}>
 
-          <div className="my__event_form" 
-              hidden={!event}>
-              <ItemAddForm
-                onClickEvent={this.onClickEvent}
-                onItemAdded={this.onItemAdded} /> 
-          </div>
+            <div className="my__event_form" 
+                hidden={!event}>
+                <ItemAddForm
+                  onClickEvent={this.onClickEvent}
+                  onItemAdded={this.onItemAdded} /> 
+            </div>
 
-          <div className="add_event"
-                hidden={event}>
+            <div className="add_event"
+                  hidden={event}>
 
-            <div className="add_event_button"
-                  onClick={this.onClickEvent}>
-              <div className="add_event_icon">
-                +
+              <div className="add_event_button"
+                    onClick={this.onClickEvent}>
+                <div className="add_event_icon">
+                  +
+                </div>
+                <div className="add_event_text">
+                  Добавить событие
+                </div>             
               </div>
-              <div className="add_event_text">
-                Добавить событие
-              </div>             
-            </div>
 
-            <div className="todos__search_panel">
-              <SearchPanel
-                onSearchChange={this.onSearchChange}/>
-            </div>
+              <div className="todos__search_panel">
+                <SearchPanel
+                  onSearchChange={this.onSearchChange}/>
+              </div>
 
-            <TodoList
-              items={ visibleItems }             
-              onDelete={this.onDelete} />
+              <TodoList
+                items={ visibleItems }             
+                onDelete={this.onDelete} />
+            </div>
           </div>
-        </div>
-        {/* ----------- */}
+          {/* ----------- */}
 
-        <div className="all-event"
-            hidden={this.props.objUser? !this.state.switchEvent: this.props.objUser}>
-          <ul className="todo-list list-group">
-          {elements}
-          </ul>
+          <div className="all-event"
+              hidden={this.props.objUser? !this.state.switchEvent: this.props.objUser}>
+            <ul className="todo-list list-group">
+            {elements}
+            </ul>
+          </div>
+        
         </div>
-        
-        
 
       </div>
     );

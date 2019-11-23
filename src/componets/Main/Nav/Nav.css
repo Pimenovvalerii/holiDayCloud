@@ -1,7 +1,8 @@
 .nav {
     flex-basis: 20%;
     height: 100%;
-    padding: 20px;
+    padding-left: 20px;
+    padding: 10px;
 }
 
 /* user__item */
@@ -15,8 +16,17 @@
 .user__item-image {
     width: 100px;
     height: 100px;
-    border: 1px solid red;
     border-radius: 50%;
+    /* border: 1px solid red; */
+    background: chartreuse;
+    background-color: rgba(103,152,116,.7);
+    box-shadow:         0px 0px 30px 10px rgba(103,152,116,1);
+   
+}
+
+.user__item-image img {
+    width: 100px;
+    height: 100px;
 }
 
 .user__item span {
@@ -28,6 +38,7 @@
 .event__item {
     position: relative;
     margin-top: 20%;
+    
 }
 
 .add__event {
@@ -56,3 +67,4 @@
     color: black;
     text-decoration: none;
 }
+

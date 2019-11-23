@@ -4,6 +4,7 @@ import Main from '../Main';
 import Footer from '../Footer';
 
 import './App.css';
+import './media.css';
 
 export default class App extends React.Component {
 

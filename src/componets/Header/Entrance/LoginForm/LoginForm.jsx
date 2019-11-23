@@ -90,27 +90,28 @@ export default class LoginForm extends React.Component {
         return(
             <div className="login-form">
 
+                <div className="login-wrapper">
+                    <div className="close__login_form">
+                        <ReturnButton returnButton={this.props.closeLoginForm}/>
+                    </div>
+                    
+                    <div className="login__input blink1">                   
+                        <input onChange={this.onChengPhone.bind(this)} 
+                                placeholder="Телефон"/>
+                    </div>
+                    <div className="login__error">
+                        {this.state.error}
+                    </div>
+                    <div className="login__input blink2">
+                        <input onChange={this.onChengPassword.bind(this)} 
+                                placeholder="пароль"/>
+                    </div>
                 
-                <div className="close__login_form">
-                    <ReturnButton returnButton={this.props.closeLoginForm}/>
+                    <button className="login__button blink1"
+                            onClick={this.toComeIn}>
+                        Войти
+                    </button>
                 </div>
-                
-                <div className="login__input blink1">                   
-                    <input onChange={this.onChengPhone.bind(this)} 
-                            placeholder="Телефон"/>
-                </div>
-                <div className="login__error">
-                    {this.state.error}
-                </div>
-                <div className="login__input blink2">
-                    <input onChange={this.onChengPassword.bind(this)} 
-                            placeholder="пароль"/>
-                </div>
-               
-                <button className="login__button blink1"
-                        onClick={this.toComeIn}>
-                    Войти
-                </button>
             </div>
         )
     }

@@ -36,7 +36,8 @@ export default class EventItem extends React.Component {
                     <div  onClick={this.eventSwitch}>                           
                         События
                     </div>
-                        
+
+                      
                     <Todos 
                             {...this.props}
                             eventSwitch={this.eventSwitch}
@@ -56,6 +57,8 @@ export default class EventItem extends React.Component {
                         settingsSwitch={this.settingsSwitch}
                     />
                 </div>
+
+                
             </div>
         )
     }

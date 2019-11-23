@@ -13,6 +13,7 @@
     position: relative;
     top: 0;
     left: 240px;
+    width: 27px;
 }
 
 .login__input {
@@ -20,7 +21,7 @@
     height: 30px;
     padding: 5px;
     border-radius: 12px;
-    margin: 15px 0;
+    margin: 15px auto;
     box-shadow: -1px -1px 29px 0px rgba(50, 50, 50, 0.75);
 }
 

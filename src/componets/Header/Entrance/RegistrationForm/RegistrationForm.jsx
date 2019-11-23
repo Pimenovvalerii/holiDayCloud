@@ -16,6 +16,7 @@ export default class RegistrationForm extends React.Component {
             password : null,
             data : null,
             array:[],
+            image: null,
             error : null,
         }
 
@@ -51,6 +52,20 @@ export default class RegistrationForm extends React.Component {
        })
     }
 
+    checkboxMan = () =>{
+        const num = Math.floor(Math.random() * (7 - 0)) + 0 ;
+        this.setState({
+            image : num
+       })
+    }
+
+    checkboxWoman = (event) => {
+        const num = Math.floor(Math.random() * (14 - 7)) + 7 ;
+        this.setState({
+            image : num
+       })
+    }
+
     onChangeData = (event) => {
         this.setState({
             data : event.target.value
@@ -67,6 +82,8 @@ export default class RegistrationForm extends React.Component {
 
     onSubmitFn(){
         const {phone} = this.state;
+
+
 
         readBin(this._id)
             .then( result => {
@@ -99,42 +116,57 @@ export default class RegistrationForm extends React.Component {
         return(
             <div  className="registration_form ">
                 
-                <div className="close__registration_for">
-                    <ReturnButton returnButton={this.props.closeRegistrationForm}/>
-                </div>
+                <div className="registration_form-wrapper">
+                    <div className="close__registration_for">
+                        <ReturnButton returnButton={this.props.closeRegistrationForm}/>
+                    </div>
 
-                <div className="regist__input blink1">
-                    <input onChange={this.onChangeName} 
-                            placeholder="Имя"/>
-                </div>
+                    <div className="regist__input blink1">
+                        <input onChange={this.onChangeName} 
+                                placeholder="Имя"/>
+                    </div>
 
-                <div className="regist__input blink2">
-                    <input  onChange={this.onChangeSurname} 
-                            placeholder="Фамилия"/>
-                </div>
-                <div className="regist__error">
-                    {this.state.error }
-                </div>
-                <div className="regist__input blink3">
-                    
-                    <input onChange={this.onChangePhone} 
-                            placeholder="Телефон"/>
-                </div>
+                    <div className="regist__input blink2">
+                        <input  onChange={this.onChangeSurname} 
+                                placeholder="Фамилия"/>
+                    </div>
+                    <div className="regist__error">
+                        {this.state.error }
+                    </div>
+                    <div className="regist__input blink3">
+                        
+                        <input onChange={this.onChangePhone} 
+                                placeholder="Телефон"/>
+                    </div>
 
-                <div className="regist__input blink4">
-                    <input onChange={this.onChangePassword} 
-                            placeholder="Пароль"/>
-                </div>
+                    <div className="regist__input blink4">
+                        <input onChange={this.onChangePassword} 
+                                placeholder="Пароль"/>
+                    </div>
 
-                <div className="regist__input blink5">
-                    <input onChange={this.onChangeData} type="date" />
-                </div>
+                    <div className="regist__checkbox">
+                        <div>
+                            <label>Мужчина</label>
+                            <input onChange={this.checkboxMan}
+                                    type="checkbox"/> 
+                        </div>
+                        <div>
+                            <label>Женщина</label>
+                            <input onChange={this.checkboxWoman}
+                                    type="checkbox"/>
+                        </div>                      
+                    </div>
 
-                <div >
-                    <button className="regist__button"
-                            onClick={this.onSubmitFn.bind(this)}>
-                        Зарегистрироваться
-                    </button>
+                    <div className="regist__input blink5">
+                        <input onChange={this.onChangeData} type="date" />
+                    </div>
+
+                    <div >
+                        <button className="regist__button"
+                                onClick={this.onSubmitFn.bind(this)}>
+                            Зарегистрироваться
+                        </button>
+                    </div>
                 </div>
                 
             </ div>
