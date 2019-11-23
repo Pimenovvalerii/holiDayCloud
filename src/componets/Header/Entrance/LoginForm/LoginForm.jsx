@@ -1,6 +1,6 @@
 import React from 'react';
 import ReturnButton from '../../../ReturnButton';
-import {updateBin , readBin } from '../../../../apiJSONBin';
+import { readBin } from '../../../../apiJSONBin';
 
 
 import './LoginForm.css';

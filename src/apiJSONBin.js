@@ -1,6 +1,7 @@
 
 const secret_key ='$2b$10$y852fwXQa1i/aSBh0BEY8ugRxHLshV9pVLd3IffDj8Rvqqfj.1irC';
 
+// eslint-disable-next-line
 function createBin(body){
     return fetch(`https://api.jsonbin.io/b`,{
         method: 'POST',
@@ -38,6 +39,7 @@ function updateBin(id,body){
     }) 
 }
 
+// eslint-disable-next-line
 function deleteBin(){
     return fetch(`https://api.jsonbin.io/b/5d978992de1e6569c2490df1/latest`,{
         method: 'DELETE',
