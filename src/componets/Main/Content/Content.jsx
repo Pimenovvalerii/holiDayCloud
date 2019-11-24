@@ -20,6 +20,7 @@ export default class Content extends React.Component {
             ? this.props.user.array.concat(holidays)
             : holidays;
 
+
             events.sort((a, b)=>{
                     const d1 = new Date(a.data).setFullYear(today.getFullYear())
                     const d2 = new Date(b.data).setFullYear(today.getFullYear())
@@ -27,6 +28,7 @@ export default class Content extends React.Component {
                     const dif2 = d2-today > 0 ? d2-today : d2-today + 31536000000
                 return dif1 - dif2
             })
+
 
             let settings = {
                 // dots: true,
@@ -67,10 +69,9 @@ export default class Content extends React.Component {
 
                     </Slider>
 
-                </div>
-                
-            )
-        
 
+                </div> 
+
+            )
     }
 }
