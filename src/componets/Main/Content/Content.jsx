@@ -27,16 +27,7 @@ export default class Content extends React.Component {
                         const dif2 = d2-today > 0 ? d2-today : d2-today + 31536000000
                     return dif1 - dif2
                 })
-
-<<<<<<< HEAD
-            const sortedArr = []
             
-            Object.keys(dates).sort(function compareNumbers(a, b) {
-                return a - b;
-              }).forEach((el,i)=>{
-                sortedArr.push(dates[el])
-            })
-
             let settings = {
                 // dots: true,
                 infinite: true,
@@ -70,25 +61,12 @@ export default class Content extends React.Component {
                 <div className="slick">
                     <Slider {...settings}>
                         
-                        <ContentItem event={sortedArr[0]} />
-                        <ContentItem event={sortedArr[1]} />
-                        <ContentItem event={sortedArr[2]} />
+                        <ContentItem event={events[0]} />
+                        <ContentItem event={events[1]} />
+                        <ContentItem event={events[2]} />
 
                     </Slider>
-=======
-            return (
-                <div className="content">
-                    <ContentItem event={events[0]} />
-                    <ContentItem event={events[1]} />
-                    <ContentItem event={events[2]} />
->>>>>>> 0ddba8713000ea1521cbb9be8720671920250798
                 </div>
-                
-                // <div className="content">
-                //     <ContentItem event={sortedArr[0]} />
-                //     <ContentItem event={sortedArr[1]} />
-                //     <ContentItem event={sortedArr[2]} />
-                // </div>
             )
         
 
