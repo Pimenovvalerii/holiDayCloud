@@ -11,8 +11,50 @@ export default class Footer extends React.Component {
             // user : this.props.user
         }
 
+        
+        this.windowOnBeforeinstallprompt = (event) => {
+            console.log('👍', 'beforeinstallprompt', event);
+            // Stash the event so it can be triggered later.
+            window.deferredPrompt = event;
+            // Remove the 'hidden' class from the install button container
+            this.divInstall.hidden= false;
+        }
+
+        this.butInstallOnClick = () => {
+            console.log('👍', 'butInstall-clicked');
+            const promptEvent = window.deferredPrompt
+            if (!promptEvent) {
+                // The deferred prompt isn't available.
+                return;
+            }
+            // Show the install prompt.
+            promptEvent.prompt();
+            // Log the result
+            promptEvent.userChoice.then((result) => {
+                console.log('👍', 'userChoice', result);
+                // Reset the deferred prompt variable, since 
+                // prompt() can only be called once.
+                window.deferredPrompt = null;
+                // Hide the install button.
+                this.divInstall.hidden = true;
+            });
+        }
+  
+
+    }
+    componentDidMount(){      
+        this.divInstall = document.getElementById('divInstall');
+        this.butInstall = document.getElementById('butInstall');
+
+
+        window.addEventListener('beforeinstallprompt', this.windowOnBeforeinstallprompt );
+        this.butInstall.addEventListener('click', this.butInstallOnClick);
     }
 
+    componentWillUnmount(){
+        window.removeEventListener('beforeinstallprompt', this.windowOnBeforeinstallprompt );
+        this.butInstall.removeEventListener('click', this.butInstallOnClick);
+    }
     
     
     render(){
@@ -58,6 +100,13 @@ export default class Footer extends React.Component {
             <footer className="footer">
                 <div className="days-left">
                     {message} 
+                </div>
+
+                {/* Install button, hidden by default */}
+                <div id="divInstall" hidden>
+                    <button id="butInstall" type="button">
+                        Install
+                    </button>
                 </div>
             </footer>
         )
