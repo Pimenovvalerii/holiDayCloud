@@ -2,7 +2,7 @@
   "name": "daycloud",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/",
+  "homepage": "https://Pimenovvalerii.github.io/holiDayCloud/",
   "dependencies": {
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
