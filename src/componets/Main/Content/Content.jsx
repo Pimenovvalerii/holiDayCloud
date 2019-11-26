@@ -21,57 +21,50 @@ export default class Content extends React.Component {
             : holidays;
 
 
-            events.sort((a, b)=>{
-                    const d1 = new Date(a.data).setFullYear(today.getFullYear())
-                    const d2 = new Date(b.data).setFullYear(today.getFullYear())
-                    const dif1 = d1-today > 0 ? d1-today : d1-today + 31536000000
-                    const dif2 = d2-today > 0 ? d2-today : d2-today + 31536000000
-                return dif1 - dif2
-            })
+        events.sort((a, b)=>{
+                const d1 = new Date(a.data).setFullYear(today.getFullYear())
+                const d2 = new Date(b.data).setFullYear(today.getFullYear())
+                const dif1 = d1-today > 0 ? d1-today : d1-today + 31536000000
+                const dif2 = d2-today > 0 ? d2-today : d2-today + 31536000000
+            return dif1 - dif2
+        })
 
 
-            let settings = {
-                // dots: true,
-                infinite: true,
-                speed: 500,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows : false,
-                responsive : [
-                  {
-                    breakpoint:465,
+        let settings = {
+            // dots: true,
+            infinite: true,
+               speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows : false,
+            responsive : [
+                {
+                 breakpoint:465,
                     // settings: "slick",
-                  },
-                  {
+                },
+                {
                     breakpoint:900,
                     settings: {
                         slidesToShow: 2,
                     },
-                  },
-                  
-                  {
+                },                 
+                {
                     breakpoint:4000,
                     settings: {
                         slidesToShow: 3,
                     },
-                  }
-                ],
-            };
+                }
+            ],
+        };
 
-            return (
-
-                <div className="slick">
-                    <Slider {...settings}>
-                        
-                        <ContentItem event={events[0]} />
-                        <ContentItem event={events[1]} />
-                        <ContentItem event={events[2]} />
-
-                    </Slider>
-
-
-                </div> 
-
-            )
+        return (
+            <div className="slick">
+                <Slider {...settings}> 
+                    <ContentItem event={events[0]} />
+                    <ContentItem event={events[1]} />
+                    <ContentItem event={events[2]} />
+                </Slider>
+            </div> 
+        )
     }
 }

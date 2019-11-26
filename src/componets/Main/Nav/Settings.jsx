@@ -66,37 +66,61 @@ export default class Settings extends React.Component {
               className="settings"
               hidden={this.props.hidden}
             >
+
+              
                 <div 
                 className="settings-close"
                 onClick={this.close.bind(this)}
                 >
                   x
                 </div>
-                <input 
-                  onChange={this.onChangeName.bind(this)} 
-                  value={this.state.name}
-                  placeholder="Имя"
-                /> 
-                <input 
-                  onChange={this.onChangeSurname.bind(this)} 
-                  value={this.state.surname}
-                  placeholder="Фамилия"
-                /> 
-                <input 
-                  onChange={this.onChangePassword.bind(this)} 
-                  placeholder="Пароль"
-                  value={this.state.password}
-                /> 
-                <input 
-                  onChange={this.onChangeDate.bind(this)} 
-                  type="date"
-                  value={this.state.data}
-                /> 
-                <button
-                  onClick={this.saveChanges.bind(this)}                
-                >
-                  Сохранить
-                </button>
+
+                <div>
+                  Изменить
+                </div>
+
+                <div className="settings__input">
+                  <input 
+                    onChange={this.onChangeName.bind(this)} 
+                    value={this.state.name}
+                    placeholder="Имя"
+                  /> 
+                </div>
+                
+                <div className="settings__input">
+                  <input 
+                    onChange={this.onChangeSurname.bind(this)} 
+                    value={this.state.surname}
+                    placeholder="Фамилия"
+                  /> 
+                </div>
+                
+
+                <div className="settings__input">
+                  <input 
+                    onChange={this.onChangePassword.bind(this)} 
+                    placeholder="Пароль"
+                    value={this.state.password}
+                  /> 
+                </div>
+                
+
+                <div className="settings__input ">
+                  <input 
+                    onChange={this.onChangeDate.bind(this)} 
+                    type="date"
+                    value={this.state.data}
+                  /> 
+                </div >
+                
+
+                <div >
+                  <button className="settings__button"
+                           onClick={this.saveChanges.bind(this)}>
+                    Сохранить
+                  </button> 
+                </div>
+                
             </div>
         )
     }
