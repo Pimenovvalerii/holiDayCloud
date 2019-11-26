@@ -1,9 +1,6 @@
 .entrance{
-  /* display:flex; */
-  position: relative;
-  /* margin-left: 520px; */
-  
-}
+  display:flex;
+} 
 
 .register_button, .login_button {
   border-radius: 20px;
@@ -13,18 +10,9 @@
   color: white;
   cursor: pointer;
   outline: none;
-}
-
-.register_button {
-  margin-top: 20px;
+  margin: 12px 20px;
   width: 170px;
   height: 45px;
 }
 
-.login_button{
-  width: 140px;
-  height: 40px; 
-  margin-left: 15px;
-  margin-top: 10px;
-}
 
