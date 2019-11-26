@@ -12,6 +12,7 @@ export default class ItemAddForm extends Component {
       surname : '',
       data: '',
       textarea: '',
+      image : 'default',
     };
   }
   
@@ -21,12 +22,15 @@ export default class ItemAddForm extends Component {
   onDataChange = (e) => { this.setState( {data: e.target.value} ) };
   onTextareaChange = (e) => { this.setState( {textarea: e.target.value} ) };
 
+  onChangeMan = (e) => {this.setState( {image : 'boy'} )}
+  onChangeWoman = (e) => {this.setState( {image : 'girl'} )}
+
   onSubmit = (e) => {
     e.preventDefault();
-    const { label, name, surname, data, textarea, } = this.state;
+    const { label, name, surname, data, textarea, image} = this.state;
     this.setState({ label: '',name : '',surname : '',data: '',textarea: '', });
     const cb = this.props.onItemAdded || (() => {});
-    cb(label,name, surname, data, textarea);
+    cb(label,name, surname, data, textarea,image);
     this.props.onClickEvent();
   };
 
@@ -37,7 +41,6 @@ export default class ItemAddForm extends Component {
           
           onSubmit={this.onSubmit}>
 
-          <div>Добавить картинку</div>
           <input type="text"
                   placeholder="Имя"
                   value={this.state.name}
@@ -58,6 +61,20 @@ export default class ItemAddForm extends Component {
                 value={this.state.label}
                 onChange={this.onLabelChange}
                 placeholder="Какое событие" />
+          <div>
+            <div>Выберите пол если День Кождения</div>
+            <div>
+              <span>Женский</span>
+              <input onChange={this.onChangeWoman}
+                      type="checkbox"/>
+            </div>
+            <div>
+              <span>Мужской</span>
+              <input onChange={this.onChangeMan}
+                      type="checkbox"/>
+            </div>
+          </div>
+          
           <div>
               <div>Заметка для подарка</div>
               <textarea 

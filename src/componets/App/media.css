@@ -48,7 +48,7 @@
         position: none;
     }
 
-    .todos {
+    .todos,.settings   {
         position: fixed;
         top: 0;
         left: 0;
@@ -58,8 +58,9 @@
         padding: 0;
         background: url('../../images/main-image.jpg') right center;
         background-size: cover;
-        
     }
+
+    
     .todos-wrapper{
         padding-top: 100px;
     }
@@ -86,6 +87,15 @@
 
     .add_event_button {
         /* background-color: rgba(255, 255, 255, 0.4);  */
+    }
+
+    .register_button {
+        width: 120px;
+        height:35px;
+    } 
+    .login_button {
+        width: 80px;
+        height: 30px;
     }
     
 }
