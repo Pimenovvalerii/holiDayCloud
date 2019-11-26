@@ -1,27 +1,47 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "465514f0cac61f2d94da52200eecf786",
+    "revision": "90d32242d1c6c48d9ea320bef24ee134",
     "url": "/holiDayCloud/index.html"
   },
   {
-    "revision": "badf3e920ec9beb6c366",
+    "revision": "b6305b0e543f1dd5032f",
     "url": "/holiDayCloud/static/css/2.b5df5373.chunk.css"
   },
   {
-    "revision": "920df5fe35221442e7ce",
-    "url": "/holiDayCloud/static/css/main.3410858d.chunk.css"
+    "revision": "c8aa666cf57efd92000b",
+    "url": "/holiDayCloud/static/css/main.1a197a8e.chunk.css"
   },
   {
-    "revision": "badf3e920ec9beb6c366",
-    "url": "/holiDayCloud/static/js/2.fdd3bb3e.chunk.js"
+    "revision": "b6305b0e543f1dd5032f",
+    "url": "/holiDayCloud/static/js/2.abd39568.chunk.js"
   },
   {
-    "revision": "920df5fe35221442e7ce",
-    "url": "/holiDayCloud/static/js/main.968363f8.chunk.js"
+    "revision": "c8aa666cf57efd92000b",
+    "url": "/holiDayCloud/static/js/main.444da8f6.chunk.js"
   },
   {
     "revision": "156247f3d5357177c46e",
     "url": "/holiDayCloud/static/js/runtime-main.2f1595f3.js"
+  },
+  {
+    "revision": "451e2e83649a99e0ed2f8f3c8aed74b2",
+    "url": "/holiDayCloud/static/media/baby-kid.451e2e83.png"
+  },
+  {
+    "revision": "abc05a5325b489b1f8caa3845a9bde43",
+    "url": "/holiDayCloud/static/media/child-boy.abc05a53.png"
+  },
+  {
+    "revision": "d427884c1f9e7e707bb6644a79b5c842",
+    "url": "/holiDayCloud/static/media/child-girl.d427884c.png"
+  },
+  {
+    "revision": "fff5da00bcd7ff9b0f044403da73f7e1",
+    "url": "/holiDayCloud/static/media/grandfather.fff5da00.png"
+  },
+  {
+    "revision": "7aad9050f6e4cf1d4ae6702b097e6f2f",
+    "url": "/holiDayCloud/static/media/grandma.7aad9050.png"
   },
   {
     "revision": "02063d33d390f11a000a3ddbe32ce3c0",
@@ -32,12 +52,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/holiDayCloud/static/media/man.054f0ae4.png"
   },
   {
-    "revision": "21ea626e32d89e53197095db82d08d03",
-    "url": "/holiDayCloud/static/media/man10.21ea626e.png"
-  },
-  {
-    "revision": "6487299e5d373933152b2a3f89b073a6",
-    "url": "/holiDayCloud/static/media/man11.6487299e.png"
+    "revision": "7889fc23d63585644c51b90b861b17cd",
+    "url": "/holiDayCloud/static/media/man.7889fc23.png"
   },
   {
     "revision": "da32e67e474189f26e8a534da62b34b9",
@@ -54,18 +70,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "aafe949c3f45b14186f66af5e79d83bb",
     "url": "/holiDayCloud/static/media/man6.aafe949c.png"
-  },
-  {
-    "revision": "437d8299e044b67253d3a0aa8c22baa3",
-    "url": "/holiDayCloud/static/media/man7.437d8299.png"
-  },
-  {
-    "revision": "34871dd91d099c7a677c7267a4bfec3f",
-    "url": "/holiDayCloud/static/media/man8.34871dd9.png"
-  },
-  {
-    "revision": "d09c8f7122ac74da6aab8f4da8cd2ad3",
-    "url": "/holiDayCloud/static/media/man9.d09c8f71.png"
   },
   {
     "revision": "b7c9e1e479de3b53f1e4e30ebac2403a",
@@ -86,6 +90,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "0e621d79c39c50c867adf81edd09e4fb",
     "url": "/holiDayCloud/static/media/woman.0e621d79.png"
+  },
+  {
+    "revision": "3e094ce4ba3d99e2abcc1c9e94907427",
+    "url": "/holiDayCloud/static/media/woman.3e094ce4.png"
   },
   {
     "revision": "92cfce526ebed8afcb4e90913af87317",
