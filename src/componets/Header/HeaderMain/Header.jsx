@@ -7,48 +7,55 @@ import './Header.css';
 
 
 export default class Header extends React.Component {
+    constructor(props) {
+        super(props);
+        this.toggleRef = React.createRef();
+        this.menuRef = React.createRef();
+        this.toggle = this.toggle.bind(this);
+      }
+
+    toggle(){
+        // this.toggleRef.current.hidden = true
+        this.menuRef.current.classList.toggle('active')
+    }
 
     render(){
-        // const condition = this.props.user ? true : false
         let condition = this.props.objUser ? true : false
-        // console.log(condition)
 
-        // console.log( 'header renret with '+JSON.stringify(this.props), condition )
         return(
             <div className="header"> 
-                {/* <div className="today">
-                    Сегодня {(new Date()).toLocaleString('ru-RU', { weekday: 'long',  month: 'long', day: 'numeric' })}
-                </div> */}
-               
-               <div className="header-titlle">
+                <div 
+                    className="header-titlle text"
+                >
                    Запомнить все
-                   
-                   {/* this.props.isOnline: {`${this.props.isOnline}`} <br/>
-                   this.props.user: {this.props.user ? 'true' : 'false'} <br />
-                   this.props.objUser: {this.props.objUser ? 'true' : 'false'} <br />
-                   name {this.props.objUser ? this.props.objUser.name : 'false'} */}
                 </div>
                 
-               <div>
-
-                    <div >
+                <div 
+                    className="menu"
+                    ref={this.menuRef}
+                >
+                    <span 
+                        className="toggle"
+                        onClick={this.toggle}
+                        ref={this.toggleRef}
+                    >
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </span>
+                    <div className="menuContent">
+                        
                         <Entrance 
-                                 hidden={condition}  
-                                 exit={this.props.exit} 
-                            // login={this.props.login}
-                            // log={this.props.log}                                                                                                                                                   
+                            hidden={condition}  
+                            exit={this.props.exit} 
                         />
-                    </div>
-                    
-                    <Exit 
-                        {...this.props}
-                        // exit={this.props.exit}
-                        // save={this.props.save}
-                        hidden={!condition}
-                    />
-                                   
+                        <Exit 
+                            hidden={!condition}
+                            {...this.props}
+                        />
+                    </div>                
                 </div> 
-           
+            
             </div>
         )
     }

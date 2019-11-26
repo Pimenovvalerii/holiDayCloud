@@ -43,10 +43,10 @@ export default class Entrance extends React.Component {
         // console.log(this.props.objUser)
         
         return(
-            <div  className="entrance" 
+            <div   
                     hidden={this.props.hidden}
             > 
-
+<div className="entrance">
                 <div hidden={!this.state.registration}>
                     {this.state.registSwitch 
                     ? <button className="register_button"
@@ -72,7 +72,7 @@ export default class Entrance extends React.Component {
                             exit={this.props.exit}
                     />}
                </div>
-                                
+               </div>               
             </div>
         )
     }

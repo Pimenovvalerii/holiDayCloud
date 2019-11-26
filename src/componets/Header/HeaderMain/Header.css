@@ -14,11 +14,74 @@
 
 }
 
-.today {
+/* ===BURGER=== */
+.menu span {
+    width: 70px;
+    height: 70px;
     position: fixed;
-    top: 100px;
-    left: 50px;
-    color: red;
+    right: 70px;
+    cursor: pointer;
+    background: radial-gradient(circle, rgba(103,152,116,1) 29%, rgba(50,98,64,1) 69%);
+    z-index: 1;
+    border-radius: 50%;
+  }
+  .menu span i {
+    position: absolute;
+    transform-origin: 50% 50%;
+    width: 45%;
+    height: 4px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #fff;
+    transition: transform 0.3s ease, opacity 0.1s ease 0.1s;
+  }
+  .menu span i:nth-child(1) {
+    top: 40%;
+  }
+  .menu span i:nth-child(2) {
+    top: 50%;
+  }
+  .menu span i:nth-child(3) {
+    top: 60%;
+  }
 
-}
+  .menu.active span i:nth-child(1) {
+    transform: rotate(-45deg) translate(-20%, 200%);
+    top: 50%;
+  }
+  .menu.active span i:nth-child(2) {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  .menu.active span i:nth-child(3) {
+    transform: rotate(45deg) translate(-20%, -200%);
+    top: 50%;
+  }
 
+  .menu {
+    height: 70px;
+    width:  calc(100% - 140px);
+    right: 105px;
+    top: 20px;
+    position: absolute;
+    background: transparent;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .menu .menuContent  {
+    display: flex;
+    padding-right: 70px;
+    justify-content: flex-end;
+    transition: all .5s ease;
+    position: relative;
+    right: -1000px;
+    height: 100%;
+  }
+
+    
+  .menu.active .menuContent  {
+    right: 0
+
+  }
+  
