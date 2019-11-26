@@ -21,6 +21,7 @@ export default class Nav extends React.Component {
             window.deferredPrompt = event;
             // Remove the 'hidden' class from the install button container
             this.divInstall.hidden= false;
+            this.divInstall.classList.add("divInstall");
         }
 
         this.butInstallOnClick = () => {
@@ -40,7 +41,6 @@ export default class Nav extends React.Component {
                 window.deferredPrompt = null;
                 // Hide the install button.
                 this.divInstall.hidden = true;
-                this.divInstall.classList.add("divInstall")
             });
         }
       }
