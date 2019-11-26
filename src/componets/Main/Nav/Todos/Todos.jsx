@@ -33,10 +33,10 @@ export default class Todos extends Component {
   
   
 
-  onItemAdded = (label, name, surname, data, textarea) => {
+  onItemAdded = (label, name, surname, data, textarea,image) => {
 
     const {phone} = this.props.objUser
-    const item = this.createItem(label, name, surname, data, textarea);
+    const item = this.createItem(label, name, surname, data, textarea,image);
     item.id = Math.floor(Math.random()*1000000);
     const local = JSON.parse(localStorage.getItem(phone));
     local.array.push(item)
@@ -54,13 +54,14 @@ export default class Todos extends Component {
     // })
 };
 
-createItem(label, name, surname, data, textarea) {
+createItem(label, name, surname, data, textarea,image) {
   return {
     label,
     name, 
     surname, 
     data, 
-    textarea,      
+    textarea, 
+    image,     
   };
 }
 

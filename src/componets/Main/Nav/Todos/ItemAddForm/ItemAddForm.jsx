@@ -13,6 +13,7 @@ export default class ItemAddForm extends Component {
       data: '',
       textarea: '',
       image : 'default',
+      checked :null,
     };
   }
   
@@ -22,16 +23,18 @@ export default class ItemAddForm extends Component {
   onDataChange = (e) => { this.setState( {data: e.target.value} ) };
   onTextareaChange = (e) => { this.setState( {textarea: e.target.value} ) };
 
-  onChangeMan = (e) => {this.setState( {image : 'boy'} )}
-  onChangeWoman = (e) => {this.setState( {image : 'girl'} )}
+  onChangeMan = (e) => {this.setState( {image : 'boy'} )};
+  onChangeWoman = (e) => {this.setState( {image : 'girl'} )};
 
   onSubmit = (e) => {
+    
     e.preventDefault();
     const { label, name, surname, data, textarea, image} = this.state;
-    this.setState({ label: '',name : '',surname : '',data: '',textarea: '', });
+    this.setState({ label: '',name : '',surname : '',data: '',textarea: '',image : 'default', });
     const cb = this.props.onItemAdded || (() => {});
     cb(label,name, surname, data, textarea,image);
     this.props.onClickEvent();
+    // this.setState( {checked: null});
   };
 
   render() {
@@ -65,12 +68,14 @@ export default class ItemAddForm extends Component {
             <div>Выберите пол если День Кождения</div>
             <div>
               <span>Женский</span>
-              <input onChange={this.onChangeWoman}
+              <input checked={this.state.checked}
+                      onChange={this.onChangeWoman}
                       type="checkbox"/>
             </div>
             <div>
               <span>Мужской</span>
-              <input onChange={this.onChangeMan}
+              <input checked={this.state.checked}
+                      onChange={this.onChangeMan}
                       type="checkbox"/>
             </div>
           </div>

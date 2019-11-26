@@ -14,19 +14,23 @@ import woman4 from './images/icon/user_icon/woman/woman4.png';
 import woman5 from './images/icon/user_icon/woman/woman5.png';
 import woman6 from './images/icon/user_icon/woman/woman6.png';
 
-import babyBoy from './images/icon/baby-kid.png';
-import boy from './images/icon/boy.png';
+import kidBoy from './images/icon/kid-boy.png';
 import childBoy from './images/icon/child-boy.png';
+import boy from './images/icon/boy.png';
 import manB from './images/icon/man.png';
+import bigMan from './images/icon/big-man.png';
 import grandfather from './images/icon/grandfather.png';
 
-import babyGirl from './images/icon/baby-kid.png';
+import baby from './images/icon/baby.png';
+import kidGirl from './images/icon/kid-girl.png';
 import childGirl from './images/icon/child-girl.png';
 import girl from './images/icon/girl.png';
 import womanB from './images/icon/woman.png';
-import grandma from './images/icon/grandma.png';
+import bigWoman from './images/icon/big-woman.png';
+import grandmother from './images/icon/grandma.png';
 
-export {babyBoy,boy,childBoy,manB,grandfather};
-export {babyGirl,childGirl,girl,womanB,grandma};
+import defaulIcon from './images/icon/defaul-icon.png';
+
+export {baby,kidGirl,childGirl,girl,womanB,bigWoman,grandmother,kidBoy,childBoy,boy,manB,bigMan,grandfather,defaulIcon};
 export {woman,woman1,woman2,woman3,woman4,woman5,woman6};
 export {man,man1,man2,man3,man4,man5,man6};
