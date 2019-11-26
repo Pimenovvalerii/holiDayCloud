@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "90d32242d1c6c48d9ea320bef24ee134",
+    "revision": "88f04826ec85915a002b9c45bd855bcc",
     "url": "/holiDayCloud/index.html"
   },
   {
-    "revision": "b6305b0e543f1dd5032f",
+    "revision": "9feb22cc0f916f80d7ff",
     "url": "/holiDayCloud/static/css/2.b5df5373.chunk.css"
   },
   {
-    "revision": "c8aa666cf57efd92000b",
-    "url": "/holiDayCloud/static/css/main.1a197a8e.chunk.css"
+    "revision": "6e04c13104be0975377e",
+    "url": "/holiDayCloud/static/css/main.502cb1d0.chunk.css"
   },
   {
-    "revision": "b6305b0e543f1dd5032f",
-    "url": "/holiDayCloud/static/js/2.abd39568.chunk.js"
+    "revision": "9feb22cc0f916f80d7ff",
+    "url": "/holiDayCloud/static/js/2.11abefe5.chunk.js"
   },
   {
-    "revision": "c8aa666cf57efd92000b",
-    "url": "/holiDayCloud/static/js/main.444da8f6.chunk.js"
+    "revision": "6e04c13104be0975377e",
+    "url": "/holiDayCloud/static/js/main.459e0320.chunk.js"
   },
   {
     "revision": "156247f3d5357177c46e",
@@ -25,7 +25,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "451e2e83649a99e0ed2f8f3c8aed74b2",
-    "url": "/holiDayCloud/static/media/baby-kid.451e2e83.png"
+    "url": "/holiDayCloud/static/media/baby.451e2e83.png"
+  },
+  {
+    "revision": "f6e1d92bb517d17263ef9addb799eccf",
+    "url": "/holiDayCloud/static/media/big-woman.f6e1d92b.png"
   },
   {
     "revision": "abc05a5325b489b1f8caa3845a9bde43",
@@ -42,6 +46,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7aad9050f6e4cf1d4ae6702b097e6f2f",
     "url": "/holiDayCloud/static/media/grandma.7aad9050.png"
+  },
+  {
+    "revision": "a1d4b8aa80a918fa25689603fa18fa20",
+    "url": "/holiDayCloud/static/media/kid-boy.a1d4b8aa.png"
+  },
+  {
+    "revision": "107b26fadf3553947d95674f4b224087",
+    "url": "/holiDayCloud/static/media/kid-girl.107b26fa.png"
   },
   {
     "revision": "02063d33d390f11a000a3ddbe32ce3c0",
