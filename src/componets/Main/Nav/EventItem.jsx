@@ -32,8 +32,13 @@ export default class EventItem extends React.Component {
         return(       
             <div className="event__item">
                
-                <div> 
-                    <div  onClick={this.eventSwitch}>                           
+                <div
+                    className="nav_btn_wrap"
+                > 
+                    <div  
+                        onClick={this.eventSwitch}
+                        className="nav_btn"    
+                    >                           
                         События
                     </div>
 
@@ -45,9 +50,12 @@ export default class EventItem extends React.Component {
                     />
                                                                       
                 </div>
-                <div>
+                <div 
+                    className="nav_btn_wrap"
+                >
                     <div
-                    onClick={this.settingsSwitch}
+                        onClick={this.settingsSwitch}
+                        className="nav_btn"    
                     >
                         Настройки
                     </div>

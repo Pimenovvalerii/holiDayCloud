@@ -1,12 +1,51 @@
 @media screen and (max-width: 720px) {
     .user__item{
-        display: block;
-        padding-top: 100px;
-        overflow-wrap: break-word;
+        flex-direction: column;
+        align-items: center; 
         max-width: 100px;
     }
+    .user__item span{
+        margin: 5px;
+    }
 }
+@media screen and (max-width: 650px){
+    .menu span {
+        width: 40px;
+        height: 40px;
+        right: 30px;
+        top: 20px;
+    }
+    .menu span i {
+        height: 3px;
+        width: 50%;
+    }
+    .menu span i:nth-child(1) {
+        top: 30%;
+    }
+    .menu span i:nth-child(2) {
+        top: 50%;
+    }
+    .menu span i:nth-child(3) {
+        top: 70%;
+    }
 
+    .menu.active span i:nth-child(1) {
+        transform: rotate(-45deg) translate(-15%, 200%);
+    }
+    .menu.active span i:nth-child(3) {
+        transform: rotate(45deg) translate(-15%, -200%);
+    }
+
+    .menu .menuContent{
+        padding: 0;
+    } 
+    .register_button, .login_button, .exit__button{
+        width: 120px;
+        height: 40px;
+        margin: 0 20px;
+    }
+
+}
 @media screen and (max-width: 450px) {
     
     .login-form, .registration_form {
@@ -35,9 +74,11 @@
         box-shadow:         0px 0px 30px 0px rgba(103,152,116,1);
     } 
 
-    .regist__button, .login__button{
-        box-shadow:         0px 0px 30px 0px rgba(103,152,116,1);
-        background-color: rgba(255, 255, 255, 0.4); 
+    .regist_button, .login_button, .exit__button{
+        box-shadow: 0px 0px 30px 0px rgba(103,152,116,1);
+        background-color: rgba(255, 255, 255, 0.4);
+        margin: 0;
+
     }
     .blink1, .blink2 ,.blink3, .blink4,.blink5, .regist__button  {
         -webkit-animation: none;
@@ -89,13 +130,13 @@
         /* background-color: rgba(255, 255, 255, 0.4);  */
     }
 
-    .register_button {
-        width: 120px;
-        height:35px;
-    } 
-    .login_button {
-        width: 80px;
-        height: 30px;
+    .menu ,.menu.active{
+        width: 100%;
+        top: 80px;
+        right: 0;
+    }
+    .menu .menuContent{
+        justify-content: center;
     }
     
 }

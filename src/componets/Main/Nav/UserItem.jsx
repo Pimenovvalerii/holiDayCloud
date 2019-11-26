@@ -13,7 +13,9 @@ export default class UserItem extends React.Component{
         return (
             <div className="user__item">
                 
-                <div className="user__item-image">
+                <div 
+                className="user__item-image"
+                >
                     <img src={arr[num]}  alt="img"/>
                 </div>
                 

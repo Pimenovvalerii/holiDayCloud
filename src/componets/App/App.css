@@ -2,3 +2,10 @@
     background: url('../../images/main-image.jpg') right center;
     background-size: cover;
 }
+
+.text{
+    color: antiquewhite;
+    background-color: rgba(103,152,116,.7);
+    box-shadow: 0px 0px 30px 10px rgba(103,152,116,1);
+
+}

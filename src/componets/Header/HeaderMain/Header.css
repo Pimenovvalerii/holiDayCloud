@@ -14,23 +14,16 @@
 
 }
 
-.today {
-    color: red;
-
-    display: flex;
-    align-items: center;
-
-}
-
 /* ===BURGER=== */
 .menu span {
     width: 70px;
     height: 70px;
-    position: absolute;
-    right: 0;
+    position: fixed;
+    right: 70px;
     cursor: pointer;
-    background: #679874;
+    background: radial-gradient(circle, rgba(103,152,116,1) 29%, rgba(50,98,64,1) 69%);
     z-index: 1;
+    border-radius: 50%;
   }
   .menu span i {
     position: absolute;
@@ -69,7 +62,7 @@
   .menu {
     height: 70px;
     width:  calc(100% - 140px);
-    right: 70px;
+    right: 105px;
     top: 20px;
     position: absolute;
     background: transparent;
@@ -91,3 +84,4 @@
     right: 0
 
   }
+  

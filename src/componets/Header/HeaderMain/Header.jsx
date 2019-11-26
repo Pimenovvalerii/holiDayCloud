@@ -9,7 +9,6 @@ import './Header.css';
 export default class Header extends React.Component {
     constructor(props) {
         super(props);
-        // создадим реф в поле `textInput` для хранения DOM-элемента
         this.toggleRef = React.createRef();
         this.menuRef = React.createRef();
         this.toggle = this.toggle.bind(this);
@@ -26,7 +25,7 @@ export default class Header extends React.Component {
         return(
             <div className="header"> 
                 <div 
-                    className="header-titlle"
+                    className="header-titlle text"
                 >
                    Запомнить все
                 </div>
@@ -45,9 +44,7 @@ export default class Header extends React.Component {
                         <i></i>
                     </span>
                     <div className="menuContent">
-                        <div className="today">
-                            Сегодня {(new Date()).toLocaleString('ru-RU', { weekday: 'long',  month: 'long', day: 'numeric' })}
-                        </div>
+                        
                         <Entrance 
                             hidden={condition}  
                             exit={this.props.exit} 
