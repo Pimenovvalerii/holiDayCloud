@@ -1,19 +1,20 @@
 .settings {
-
     width: 320px;
+    height: 100%;
     position: absolute;
-    top: 0;
-    left: 100px;
+    top: 40%;
+    left: 99%;
     padding: 20px;
     padding-top: 10px;
-    border-radius: 15px;
-    background: radial-gradient(circle, rgba(103,152,116,1) 19%, rgba(50,98,64,1) 80%);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: radial-gradient(circle, rgba(103,152,116,1) 19%, rgba(66, 107, 73,1) 80%);
     z-index: 1;
     box-sizing: border-box;
 
 }
 
-.close__registration_for {
+.close__settings_for {
     position: relative;
     top: 0;
     left: 240px;
@@ -21,19 +22,18 @@
 }
 
 .settings__input {
-    width: 260px;
-    height: 25px;
+    height: 30px;
     padding: 5px;
     border-radius: 12px;
-    margin: 5px 0;
-    box-shadow: -1px -1px 29px 0px rgba(50, 50, 50, 0.75);
+    margin: 15px 0;
+    box-shadow:         0px 0px 30px 0px rgba(103,152,116,1);
 }
 
 .settings__input input {
     width: 100%;
     background-color: rgba(0, 0, 0, 0);
     border: none;
-    color:rgba(1,42,13,1);
+    color:antiquewhite;
     outline:none;
     text-align: center;
     padding-top: 5px;
@@ -41,7 +41,7 @@
 }
 
 .settings__input input::placeholder{
-    color: rgba(1,42,13,1);
+    color: antiquewhite;
 }
 
 .regist__checkbox {
@@ -53,7 +53,7 @@
 .settings__button  {
     display: block;
     background-color: rgba(0, 0, 0, 0);
-    color: rgba(1,42,13,1);
+    color: antiquewhite;
     margin: 0 auto;
     margin-top: 10px;
     border: none;
@@ -61,19 +61,20 @@
     padding: 10px 55px;
     border-radius: 15px;
     box-shadow:         0px 0px 30px 0px rgba(103,152,116,1);
+    /* box-shadow: -1px -1px 29px 0px rgba(50, 50, 50, 0.75); */
     cursor: pointer;
 }
 
-.settings__button {
-    -webkit-animation: settings__button 2s linear infinite;
-    animation: settings__button 5s linear infinite;
+.blink {
+    -webkit-animation: blink 2s linear infinite;
+    animation: blink 5s linear infinite;
 }
-@-webkit-keyframes settings__button {
+@-webkit-keyframes blink {
     0% { box-shadow:         0px 0px 30px 0px rgba(103,152,116,1); }
     50% { box-shadow:         0px 0px 30px 0px rgb(30, 212, 78); }
     100% { box-shadow:         0px 0px 30px 0px rgba(103,152,116,1); }
 }
-@keyframes settings__button {
+@keyframes blink {
     0% { box-shadow:         0px 0px 30px 0px rgba(103,152,116,1); }
     50% {box-shadow:         0px 0px 30px 0px rgb(30, 212, 78); }
     100% { box-shadow:         0px 0px 30px 0px rgba(103,152,116,1); }
@@ -81,7 +82,7 @@
 
 /* test blink */
 
-.blink1, .blink3 ,.blink5  {
+.blink1 {
     -webkit-animation: blink1 2s linear infinite;
     animation: blink1 3s linear infinite;
 }
@@ -95,7 +96,7 @@
     50% {box-shadow:         0px 0px 30px 0px rgb(30, 212, 78); }
     100% { box-shadow:         0px 0px 30px 0px rgba(103,152,116,1); }
 }
- .blink2 , .blink4  {
+ .blink2   {
     -webkit-animation: blink1 2s linear infinite;
     animation: blink1 5s linear infinite;
 }

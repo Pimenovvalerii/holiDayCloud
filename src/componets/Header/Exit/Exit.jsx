@@ -4,14 +4,13 @@ import './Exit.css';
 class Exit extends React.Component {
     
     exitFunck(){
-        // const user = JSON.parse(localStorage.getItem('user'));
-        // user.login = false;
-        // localStorage.setItem('user',JSON.stringify(user))
-        // this.props.login(false)
+        
         localStorage.setItem(`users`, JSON.stringify({ user: null }));
         this.props.save(this.props.objUser)
         this.props.exit()
-        
+
+        // localStorage.setItem(`users`, JSON.stringify({ user: '333' }));
+        // localStorage.removeItem('null')
     } 
 
     render(){return(

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Settings.css';
+import ReturnButton from '../../../componets/ReturnButton';
 
 
 export default class Settings extends React.Component {
@@ -66,20 +67,18 @@ export default class Settings extends React.Component {
               className="settings"
               hidden={this.props.hidden}
             >
-
-              
-                <div 
-                className="settings-close"
-                onClick={this.close.bind(this)}
-                >
-                  x
-                </div>
+              <div className="close__settings_for">
+                  <ReturnButton returnButton={this.close.bind(this)}/>
+              </div>
+              <div className="settings_wrapper">             
+                
+                
 
                 <div>
                   Изменить
                 </div>
 
-                <div className="settings__input">
+                <div className="settings__input blink">
                   <input 
                     onChange={this.onChangeName.bind(this)} 
                     value={this.state.name}
@@ -87,7 +86,7 @@ export default class Settings extends React.Component {
                   /> 
                 </div>
                 
-                <div className="settings__input">
+                <div className="settings__input blink1">
                   <input 
                     onChange={this.onChangeSurname.bind(this)} 
                     value={this.state.surname}
@@ -96,7 +95,7 @@ export default class Settings extends React.Component {
                 </div>
                 
 
-                <div className="settings__input">
+                <div className="settings__input blink">
                   <input 
                     onChange={this.onChangePassword.bind(this)} 
                     placeholder="Пароль"
@@ -105,7 +104,7 @@ export default class Settings extends React.Component {
                 </div>
                 
 
-                <div className="settings__input ">
+                <div className="settings__input blink1">
                   <input 
                     onChange={this.onChangeDate.bind(this)} 
                     type="date"
@@ -115,11 +114,12 @@ export default class Settings extends React.Component {
                 
 
                 <div >
-                  <button className="settings__button"
+                  <button className="settings__button blink"
                            onClick={this.saveChanges.bind(this)}>
                     Сохранить
                   </button> 
                 </div>
+              </div>
                 
             </div>
         )

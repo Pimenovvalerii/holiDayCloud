@@ -74,9 +74,7 @@ export default class Nav extends React.Component {
 
             >
                 
-                <div 
-                    className="user__item"
-                >
+                <div className="user__item">
                     
                     <div 
                         className="user__item-image"

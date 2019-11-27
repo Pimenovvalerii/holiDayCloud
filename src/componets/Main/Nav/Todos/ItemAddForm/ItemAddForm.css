@@ -1,9 +1,62 @@
-.bottom-panel {
-  margin-top: 10px;
+.itemAddForm{
+  /* border: 1px solid red; */
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-.bottom-panel .new-todo-label {
-  width: auto;
-  flex-grow: 1;
-  margin-right: 3px;
+.itemAddForm__input {
+  height: 25px;
+  padding: 5px;
+  border-radius: 12px;
+  margin: 5px 0;
+  box-shadow: -1px -1px 29px 0px rgba(50, 50, 50, 0.75);
+}
+
+.itemAddForm__input input {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color:antiquewhite;
+  outline:none;
+  text-align: center;
+  padding-top: 5px;
+  cursor: pointer;
+}
+
+.itemAddForm__input input::placeholder {
+  color: antiquewhite;
+}
+
+.male-female{
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: -1px -1px 29px 0px rgba(50, 50, 50, 0.75);
+}
+
+.male-female-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.male-female-box div{
+  display: flex;
+  align-items: flex-end;
+}
+
+.male-female-box div span {
+  margin-right: 10px;
+}
+
+.itemAddForm-button {
+  display: block;
+  background-color: rgba(0, 0, 0, 0);
+  color: antiquewhite;
+  margin: 0 auto;
+  border: none;
+  outline:none;
+  padding: 10px 55px;
+  border-radius: 15px;
+  box-shadow: -1px -1px 29px 0px rgba(50, 50, 50, 0.75);
+  cursor: pointer;
 }

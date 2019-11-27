@@ -17,7 +17,14 @@ const TodoList = ({ items, onDelete }) => {
     );
   });
 
-  return (<ul className="todo-list list-group">{ elements }</ul>);
+  return (
+    
+      <div className="todo-list-test">
+        <ul className="todo-list">
+          { elements }
+        </ul>
+      </div>
+    );
 };
 
 export default TodoList;

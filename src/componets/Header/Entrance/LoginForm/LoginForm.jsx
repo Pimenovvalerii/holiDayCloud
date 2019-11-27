@@ -37,52 +37,57 @@ export default class LoginForm extends React.Component {
 
     toComeIn(){
         const {phoneLogin, passwordLogin} = this.state;
-        
-        if( localStorage.getItem(phoneLogin) ){
-            
-            const user = JSON.parse(localStorage.getItem(phoneLogin))
-            const password = user.password
-            if(password === passwordLogin){
-                console.log('заходите')
-                localStorage.setItem(`users`, JSON.stringify({ user: phoneLogin }));
-                this.props.exit()
-                this.props.closeLoginForm()
-            }else{
-                this.setState({error :'неверный пароль или логин'})
-                console.log('пароль не верный ')
-            }
-            
-            
-        } else{
-            console.log('в лк нету user')
-            readBin(this._id)
-            .then( result => {
 
-                const arr = result.users.filter( el => {
-                    return el.phone === phoneLogin
-                })
-                // console.log(arr)
-
-                if(arr.length !== 0){
-                    // console.log(arr)
-                    if(arr[0].password === passwordLogin){
-                        console.log(arr[0].password)
-                        const localStorKey = arr[0].phone;
-                        localStorage.setItem(`${localStorKey}`, JSON.stringify(arr[0]));
-                        localStorage.setItem(`users`, JSON.stringify({ user: phoneLogin }));
-                        this.props.exit()
-                        this.props.closeLoginForm()
-                    } else {
-                        this.setState({error :'Неверный пароль или логин'})
-                        console.log('неверный пароль')
-                    }
-                     
-                } else {
-                    this.setState({error :'Такой пользователь не зарегистрирован'})                           
-                    console.log('такой пользователь не зарегистрирован')
+        if(phoneLogin != null && passwordLogin != null){
+            if( localStorage.getItem(phoneLogin) ){
+            
+                const user = JSON.parse(localStorage.getItem(phoneLogin))
+                const password = user.password
+                if(password === passwordLogin){
+                    console.log('заходите')
+                    localStorage.setItem(`users`, JSON.stringify({ user: phoneLogin }));
+                    this.props.exit()
+                    this.props.closeLoginForm()
+                }else{
+                    this.setState({error :'неверный пароль или логин'})
+                    console.log('пароль не верный ')
                 }
-            })
+                
+                
+            } else{
+                console.log('в лк нету user')
+                readBin(this._id)
+                .then( result => {
+    
+                    const arr = result.users.filter( el => {
+                        return el.phone === phoneLogin
+                    })
+                    // console.log(arr)
+    
+                    if(arr.length !== 0){
+                        // console.log(arr)
+                        if(arr[0].password === passwordLogin){
+                            console.log(arr[0].password)
+                            const localStorKey = arr[0].phone;
+                            localStorage.setItem(`${localStorKey}`, JSON.stringify(arr[0]));
+                            localStorage.setItem(`users`, JSON.stringify({ user: phoneLogin }));
+                            this.props.exit()
+                            this.props.closeLoginForm()
+                        } else {
+                            this.setState({error :'Неверный пароль или логин'})
+                            console.log('неверный пароль')
+                        }
+                         
+                    } else {
+                        this.setState({error :'Такой пользователь не зарегистрирован'})                           
+                        console.log('такой пользователь не зарегистрирован')
+                    }
+                })
+            }
+        } else {
+            this.setState({error :'Заполните все поля'})
         }
+        
     }
 
     render(){

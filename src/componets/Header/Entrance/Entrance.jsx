@@ -46,7 +46,7 @@ export default class Entrance extends React.Component {
             <div   
                     hidden={this.props.hidden}
             > 
-<div className="entrance">
+                <div className="entrance">
                 <div hidden={!this.state.registration}>
                     {this.state.registSwitch 
                     ? <button className="register_button"

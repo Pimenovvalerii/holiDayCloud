@@ -160,8 +160,8 @@ render() {
                   // style={ {borderBottom : this.state.switchEvent ? "1px solid red" :"hidden" }}
                   style={ {boxShadow : this.state.switchEvent ? 
                                       " 0px 0px 30px 5px rgba(103,152,116,1)" :
-                                      "0px 0px 20px 10px rgba(103,152,116,1)",
-                            color : this.state.switchEvent ? 'black': 'rgb(5, 75, 36)' }}
+                                      "0px 0px 20px 10px rgba(103,152,116,1)" }}
+                             
                   hidden={!this.props.objUser}
                   >
                     
@@ -172,8 +172,8 @@ render() {
                 // style={ {borderBottom : this.state.switchEvent ? "hidden": "1px solid red"  }}
                 style={ {boxShadow : this.state.switchEvent ? 
                                   "0px 0px 20px 10px rgba(103,152,116,1)" : 
-                                  " 0px 0px 30px 5px rgba(103,152,116,1)" ,
-                          color : this.state.switchEvent ? 'rgb(5, 75, 36)' :'black' }}
+                                  " 0px 0px 30px 5px rgba(103,152,116,1)"}}
+                           
                 >
                   
               Все события
@@ -214,11 +214,10 @@ render() {
                 onDelete={this.onDelete} />
             </div>
           </div>
-          {/* ----------- */}
-
+          
           <div className="all-event"
               hidden={this.props.objUser? !this.state.switchEvent: this.props.objUser}>
-            <ul className="todo-list list-group">
+            <ul className="todo-list">
             {elements}
             </ul>
           </div>

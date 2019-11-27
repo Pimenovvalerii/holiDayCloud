@@ -2,17 +2,23 @@
     position: fixed;
     top: 20px;
     right: 30px;
-    max-width: 320px;
+    width: 320px;
     padding: 20px;
     border-radius: 15px;
     background: radial-gradient(circle, rgba(103,152,116,1) 29%, rgba(50,98,64,1) 69%);
     z-index: 1;
+    box-sizing: border-box;
+}
+
+.registration_form-wrapper {
+    width: 100%;
+    position: relative;
 }
 
 .regist__error {
     position: absolute;
-    top: 45px;
-    left: 30px;
+    top: 25px;
+    left: 0;
     color: rgb(194, 2, 2);
     font-size: 14px;
 }
@@ -20,12 +26,10 @@
 .close__registration_for {
     position: relative;
     top: 0;
-    left: 240px;
-    width: 27px;
+    left: 90%;
 }
 
 .regist__input {
-    width: 260px;
     height: 30px;
     padding: 5px;
     border-radius: 12px;
@@ -51,7 +55,13 @@
 .regist__checkbox {
     display: flex;
     justify-content:space-around;
-
+}
+.regist__checkbox div {
+    display: flex;
+    align-items: center;
+}
+.regist__checkbox div label {
+    margin-right: 10px;
 }
 
 .regist__button  {

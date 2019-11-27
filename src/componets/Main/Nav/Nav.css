@@ -3,7 +3,7 @@
     left: -1000px;
     top: 0;
     bottom: 0;
-    z-index: 2;
+    
     transition: all .5s ease;
     background: rgb(66, 107, 73);
     width: calc(10% + 100px);
@@ -12,6 +12,7 @@
     flex-direction: column;
     align-items: center;
     color: antiquewhite;
+    z-index: 1;
 
 }
 .nav.active{
@@ -22,12 +23,12 @@
     position: fixed;
     left: 5%;
     top: 70px;
-    z-index: 2;
     width: 100px;
     height: 100px;
     border-radius: 50%;
     background-color: rgba(103,152,116,.7);
     box-shadow:         0px 0px 30px 10px rgba(103,152,116,1);
+    z-index: 1;
 }
 
 .user__item-image img {
@@ -45,6 +46,7 @@
 }
 
 .nav_btn{
+    position: relative;
     margin: 10px;
     border: 2px solid antiquewhite;
     cursor: pointer;

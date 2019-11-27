@@ -37,47 +37,71 @@ export default class ItemAddForm extends Component {
     // this.setState( {checked: null});
   };
 
+  callBack(){
+    this.props.onClickEvent();
+  }
+
   render() {
     return (
-      <div >
-        <form
+      <div className="itemAddForm">
+
+        <div onClick={this.callBack.bind(this)}>
+          Вернуться назад
+        </div>
+
+        <form onSubmit={this.onSubmit}>
+
+          <div className="itemAddForm__input">
+            <input type="text"
+                    placeholder="Имя"
+                    value={this.state.name}
+                    onChange={this.onNameChange}/>
+          </div>
           
-          onSubmit={this.onSubmit}>
-
-          <input type="text"
-                  placeholder="Имя"
-                  value={this.state.name}
-                  onChange={this.onNameChange}/>
-
-          <input  type="text"
-                  placeholder="Фамилия"
-                  value={this.state.surname}
-                  onChange={this.onSurnameChange}/>
-
-          <input type="date"
-                  value={this.state.data}
-                  onChange={this.onDataChange}
+          <div className="itemAddForm__input">
+            <input  type="text"
+                    placeholder="Фамилия"
+                    value={this.state.surname}
+                    onChange={this.onSurnameChange}/>
+          </div>
+          
+          <div className="itemAddForm__input">
+            <input type="date"
+                    value={this.state.data}
+                    onChange={this.onDataChange}
+                    required/>
+          </div>
+          
+          <div className="itemAddForm__input">
+            <input type="text"
+                  className="form-control new-todo-label"
+                  value={this.state.label}
+                  onChange={this.onLabelChange}
+                  placeholder="Какое событие" 
                   required/>
+          </div>
           
-          <input type="text"
-                className="form-control new-todo-label"
-                value={this.state.label}
-                onChange={this.onLabelChange}
-                placeholder="Какое событие" />
-          <div>
-            <div>Выберите пол если День Кождения</div>
-            <div>
-              <span>Женский</span>
-              <input checked={this.state.checked}
-                      onChange={this.onChangeWoman}
-                      type="checkbox"/>
-            </div>
-            <div>
-              <span>Мужской</span>
-              <input checked={this.state.checked}
-                      onChange={this.onChangeMan}
-                      type="checkbox"/>
-            </div>
+          <div className="male-female">
+            <div>Выберите пол если День Рождения</div>
+            <div className="male-female-box">
+              <div>
+                <span>Женский</span>
+                <input checked={this.state.checked}
+                        onChange={this.onChangeWoman}
+                        type="radio"
+                        name="pol"/>
+              </div>
+
+              <div>
+                <span>Мужской</span>
+                <input checked={this.state.checked}
+                        onChange={this.onChangeMan}
+                        type="radio"
+                        name="pol"/>
+              </div>                              
+             </div>
+              
+            
           </div>
           
           <div>
@@ -87,9 +111,13 @@ export default class ItemAddForm extends Component {
                       onChange={this.onTextareaChange}/>
           </div>
           
-
-          <button type="submit"
-                  className="btn btn-outline-secondary">Добавить</button>
+          <div >
+            <button className="itemAddForm-button"
+                    type="submit">
+              Добавить
+            </button>
+          </div>
+          
         </form>
       </div>
     );

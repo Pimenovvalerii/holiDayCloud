@@ -82,10 +82,10 @@ export default class RegistrationForm extends React.Component {
 
     onSubmitFn(){
         const {phone} = this.state;
+        const {name,surname,password,data,image} = this.state;
 
-
-
-        readBin(this._id)
+        if(name !== null && surname !== null && password !== null && data !== null && image !== null && phone !== null){
+            readBin(this._id)
             .then( result => {
 
                 const arr = result.users.filter( el => {
@@ -93,7 +93,7 @@ export default class RegistrationForm extends React.Component {
                 })
 
                 if(arr.length === 0){
-                    console.log('можно создать акаунт ')
+                    
                     result.users.push(this.state)
 
                     updateBin(this._id,result)
@@ -107,67 +107,84 @@ export default class RegistrationForm extends React.Component {
                         .catch( err => {this.setState({error : err})})
                 } else {
                     this.setState({error :'Tакой пользователь уже зарегистрирован'})                           
-                    console.log('такой пользователь уже есть')
                 }
             })
+        } else{
+            this.setState({error :'Заполните все поля'})
+        }
+            
+        
     }
 
     render(){
         return(
             <div  className="registration_form ">
                 
-                <div className="registration_form-wrapper">
-                    <div className="close__registration_for">
-                        <ReturnButton returnButton={this.props.closeRegistrationForm}/>
-                    </div>
-
-                    <div className="regist__input blink1">
-                        <input onChange={this.onChangeName} 
-                                placeholder="Имя"/>
-                    </div>
-
-                    <div className="regist__input blink2">
-                        <input  onChange={this.onChangeSurname} 
-                                placeholder="Фамилия"/>
-                    </div>
-                    <div className="regist__error">
-                        {this.state.error }
-                    </div>
-                    <div className="regist__input blink3">
-                        
-                        <input onChange={this.onChangePhone} 
-                                placeholder="Телефон"/>
-                    </div>
-
-                    <div className="regist__input blink4">
-                        <input onChange={this.onChangePassword} 
-                                placeholder="Пароль"/>
-                    </div>
-
-                    <div className="regist__checkbox">
-                        <div>
-                            <label>Мужчина</label>
-                            <input onChange={this.checkboxMan}
-                                    type="checkbox"/> 
+                
+                    <div className="registration_form-wrapper">
+                        <div className="close__registration_for">
+                            <ReturnButton returnButton={this.props.closeRegistrationForm}/>
                         </div>
-                        <div>
-                            <label>Женщина</label>
-                            <input onChange={this.checkboxWoman}
-                                    type="checkbox"/>
-                        </div>                      
-                    </div>
 
-                    <div className="regist__input blink5">
-                        <input onChange={this.onChangeData} type="date" />
-                    </div>
+                        <div className="regist__input blink1">
+                            <input onChange={this.onChangeName} 
+                                    placeholder="Имя"
+                                    required/>
+                        </div>
 
-                    <div >
-                        <button className="regist__button"
-                                onClick={this.onSubmitFn.bind(this)}>
-                            Зарегистрироваться
-                        </button>
+                        <div className="regist__input blink2">
+                            <input  onChange={this.onChangeSurname} 
+                                    placeholder="Фамилия"
+                                    required/>
+                        </div>
+                        <div className="regist__error">
+                            {this.state.error }
+                        </div>
+                        <div className="regist__input blink3">
+                            
+                            <input onChange={this.onChangePhone} 
+                                    placeholder="Телефон"
+                                    required/>
+                        </div>
+
+                        <div className="regist__input blink4">
+                            <input onChange={this.onChangePassword} 
+                                    placeholder="Пароль"
+                                    required/>
+                        </div>
+
+                        <div className="regist__checkbox"
+                            required>
+                            <div>
+                                <label>Мужчина</label>
+                                <input onChange={this.checkboxMan}
+                                        type="radio"
+                                        name="pol"
+                                        required/> 
+                            </div>
+                            <div>
+                                <label>Женщина</label>
+                                <input onChange={this.checkboxWoman}
+                                        type="radio"
+                                        name="pol"
+                                        required/>
+                            </div>                      
+                        </div>
+
+                        <div className="regist__input blink5">
+                            <input onChange={this.onChangeData} 
+                                    type="date" 
+                                    required/>
+                        </div>
+
+                        <div >
+                            <button className="regist__button"
+                                    onClick={this.onSubmitFn.bind(this)}>
+                                Зарегистрироваться
+                            </button>
+                        </div>
                     </div>
-                </div>
+                
                 
             </ div>
         )
