@@ -12,10 +12,26 @@ export default class Header extends React.Component {
         this.toggleRef = React.createRef();
         this.menuRef = React.createRef();
         this.toggle = this.toggle.bind(this);
+        this.clickOnWindow = this.clickOnWindow.bind(this)
+        
       }
+    componentDidMount(){
+        window.addEventListener('click',this.clickOnWindow)
+    }
+    componentWillUnmount(){
+        window.removeEventListener('click',this.clickOnWindow)
+    }
+    clickOnWindow(e){
 
-    toggle(){
-        // this.toggleRef.current.hidden = true
+        // console.log(e.target !== this.toggleRef.current || e.target !== this.i1Ref.current || e.target !== this.i2Ref.current || e.target !== this.i3Ref.current)
+     if(e.target !== this.toggleRef.current ){
+        this.menuRef.current.classList.remove('active')
+     }
+    }
+
+    toggle(e){
+        e.stopPropagation()
+       
         this.menuRef.current.classList.toggle('active')
     }
 

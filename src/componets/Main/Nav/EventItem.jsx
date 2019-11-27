@@ -15,19 +15,30 @@ export default class EventItem extends React.Component {
 
         this.eventSwitch = this.eventSwitch.bind(this);
         this.settingsSwitch = this.settingsSwitch.bind(this);
+        this.clickListener = this.clickListener.bind(this);
+    }
+    componentDidMount(){
+        window.addEventListener('click',this.clickListener)
+    }
+    componentWillUnmount(){
+        window.removeEventListener('click',this.clickListener)
     }
 
     eventSwitch(){
         this.setState( (state)=>{
-            return { eventSwitch : !state.eventSwitch}
+            return { eventSwitch : !state.eventSwitch,  settingsSwitch : false}
         })
     }
     settingsSwitch(){
         this.setState( (state)=>{
-            return { settingsSwitch : !state.settingsSwitch}
+            return { eventSwitch : false, settingsSwitch : !state.settingsSwitch}
         })
     }
-  
+    clickListener(e){
+        if(e.target){
+            this.setState({ eventSwitch : false, settingsSwitch : false})
+        }
+    }
     render(){ 
         return(       
             <div className="event__item">
