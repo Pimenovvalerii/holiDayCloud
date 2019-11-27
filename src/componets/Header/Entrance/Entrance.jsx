@@ -40,8 +40,6 @@ export default class Entrance extends React.Component {
    
     render(){
 
-        // console.log(this.props.objUser)
-        
         return(
             <div   
                     hidden={this.props.hidden}

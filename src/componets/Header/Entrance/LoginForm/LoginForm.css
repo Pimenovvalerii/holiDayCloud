@@ -59,8 +59,8 @@
 
 .login__error {
     position: absolute;
-    top: 40px;
-    left: 30px;
+    top: 230px;
+    left: 60px;
     color: rgb(194, 2, 2);
     font-size: 14px;
 }

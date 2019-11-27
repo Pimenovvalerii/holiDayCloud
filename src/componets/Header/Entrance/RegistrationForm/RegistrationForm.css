@@ -33,9 +33,9 @@
 
 .regist__error {
     position: absolute;
-    top: 25px;
-    left: 0;
-    color: rgb(194, 2, 2);
+    top: 0;
+    left: 30px;
+    color: rgb(240, 94, 94);
     font-size: 14px;
 }
 
