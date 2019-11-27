@@ -1,7 +1,5 @@
 import React from 'react';
 import './Nav.css';
-
-import UserItem from './UserItem';
 import EventItem from './EventItem';
 import {man,man1,man2,man3,man4,man5,man6} from '../../../userImages';
 import {woman,woman1,woman2,woman3,woman4,woman5,woman6} from '../../../userImages';
@@ -14,13 +12,13 @@ export default class Nav extends React.Component {
         this.toggleRef = React.createRef();
         this.navRef = React.createRef();
         this.toggle = this.toggle.bind(this);
-
         this.windowOnBeforeinstallprompt = (event) => {
             console.log('👍', 'beforeinstallprompt', event);
             // Stash the event so it can be triggered later.
             window.deferredPrompt = event;
             // Remove the 'hidden' class from the install button container
             this.divInstall.hidden= false;
+            this.divInstall.classList.add("divInstall");
         }
 
         this.butInstallOnClick = () => {
@@ -40,25 +38,31 @@ export default class Nav extends React.Component {
                 window.deferredPrompt = null;
                 // Hide the install button.
                 this.divInstall.hidden = true;
-                this.divInstall.classList.add("divInstall")
             });
         }
+        this.clickOnWindow = this.clickOnWindow.bind(this)
+
       }
 
     componentDidMount(){      
         this.divInstall = document.getElementById('divInstall');
         this.butInstall = document.getElementById('butInstall');
 
-
+        window.addEventListener('click',this.clickOnWindow)
         window.addEventListener('beforeinstallprompt', this.windowOnBeforeinstallprompt );
         this.butInstall.addEventListener('click', this.butInstallOnClick);
     }
 
     componentWillUnmount(){
+        window.removeEventListener('click',this.clickOnWindow)
         window.removeEventListener('beforeinstallprompt', this.windowOnBeforeinstallprompt );
         this.butInstall.removeEventListener('click', this.butInstallOnClick);
     }
-    
+    clickOnWindow(e){
+        if(e.target !== this.navRef.current && e.target !== this.toggleRef.current){
+           this.navRef.current.classList.remove('active')
+        }
+    }
     toggle(){
         this.navRef.current.classList.toggle('active')
     }
@@ -66,11 +70,11 @@ export default class Nav extends React.Component {
         const num = this.props.objUser ? this.props.objUser.image : 1 ;
         const arr = [man,man1,man2,man3,man4,man5,man6,woman,woman1,
                     woman2,woman3,woman4,woman5,woman6];
-
         return (
             <div 
                 className="nav"
                 ref={this.navRef}
+                onClick={(e) => e.stopPropagation()}
 
             >
                 
@@ -89,7 +93,9 @@ export default class Nav extends React.Component {
                     <span>{this.props.objUser ? this.props.objUser.surname: 'Surname'}</span>
                     
                 </div>               
-                <EventItem {...this.props}/>
+                <EventItem 
+                    {...this.props}
+                />
                 <div className="today">
                     Сегодня {(new Date()).toLocaleString('ru-RU', { weekday: 'long',  month: 'long', day: 'numeric' })}
                 </div>
