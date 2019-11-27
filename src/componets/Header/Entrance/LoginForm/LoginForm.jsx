@@ -1,6 +1,7 @@
 import React from 'react';
 import ReturnButton from '../../../ReturnButton';
 import { readBin } from '../../../../apiJSONBin';
+import NumberFormat from 'react-number-format';
 
 
 import './LoginForm.css';
@@ -100,16 +101,19 @@ export default class LoginForm extends React.Component {
                         <ReturnButton returnButton={this.props.closeLoginForm}/>
                     </div>
                     
-                    <div className="login__input blink1">                   
-                        <input onChange={this.onChengPhone.bind(this)} 
-                                placeholder="Телефон"/>
+                    <div className="wrapper_npm_phone login__input blink1">
+                            <div>+380</div>
+                            <NumberFormat format=" (##) ###-##-##" mask="_" 
+                                            onChange={this.onChengPhone.bind(this)} 
+                                            placeholder="Телефон"/>
                     </div>
+
                     <div className="login__error">
                         {this.state.error}
                     </div>
                     <div className="login__input blink2">
                         <input onChange={this.onChengPassword.bind(this)} 
-                                placeholder="пароль"/>
+                                placeholder="Пароль"/>
                     </div>
                 
                     <button className="login__button blink1"

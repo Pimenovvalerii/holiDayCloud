@@ -76,6 +76,10 @@
         box-shadow:         0px 0px 30px 0px rgba(103,152,116,1);
     } 
 
+    .wrapper_npm_phone div {
+        top: 18px;
+    }
+
     .regist_button, .login_button, .exit__button{
         box-shadow: 0px 0px 30px 0px rgba(103,152,116,1);
         background-color: rgba(255, 255, 255, 0.4);
