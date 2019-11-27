@@ -36,7 +36,7 @@ export default class Content extends React.Component {
                speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1,
-            arrows : false,
+            arrows : true,
             responsive : [
                 {
                  breakpoint:465,

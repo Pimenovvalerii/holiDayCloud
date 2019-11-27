@@ -29,3 +29,8 @@
 .content-item-label{
     overflow-wrap: break-word;
 }
+
+button.slick-arrow.slick-prev::before,
+button.slick-arrow.slick-next::before{
+    color: rgba(103,152,116,1);
+}
