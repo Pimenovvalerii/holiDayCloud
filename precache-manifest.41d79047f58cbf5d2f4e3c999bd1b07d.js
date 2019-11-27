@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4e00fcc132727b88aba2bedaa0da2039",
+    "revision": "2dd4db67c124b75c5d0f491d052d6196",
     "url": "/holiDayCloud/index.html"
   },
   {
-    "revision": "5550a2b9b7c381546ebe",
-    "url": "/holiDayCloud/static/css/2.b5df5373.chunk.css"
+    "revision": "7c6cb0edfd5e84c47eab",
+    "url": "/holiDayCloud/static/css/2.b2cf126a.chunk.css"
   },
   {
-    "revision": "cc20072a13777731f5aa",
-    "url": "/holiDayCloud/static/css/main.738d09a9.chunk.css"
+    "revision": "428e98114a491636fadd",
+    "url": "/holiDayCloud/static/css/main.c1168250.chunk.css"
   },
   {
-    "revision": "5550a2b9b7c381546ebe",
+    "revision": "7c6cb0edfd5e84c47eab",
     "url": "/holiDayCloud/static/js/2.379d1753.chunk.js"
   },
   {
-    "revision": "cc20072a13777731f5aa",
-    "url": "/holiDayCloud/static/js/main.34fa1065.chunk.js"
+    "revision": "428e98114a491636fadd",
+    "url": "/holiDayCloud/static/js/main.103e92b4.chunk.js"
   },
   {
     "revision": "156247f3d5357177c46e",
@@ -100,31 +100,35 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/holiDayCloud/static/media/slick.f97e3bbf.svg"
   },
   {
-    "revision": "0e621d79c39c50c867adf81edd09e4fb",
-    "url": "/holiDayCloud/static/media/woman.0e621d79.png"
-  },
-  {
     "revision": "3e094ce4ba3d99e2abcc1c9e94907427",
     "url": "/holiDayCloud/static/media/woman.3e094ce4.png"
   },
   {
-    "revision": "92cfce526ebed8afcb4e90913af87317",
-    "url": "/holiDayCloud/static/media/woman1.92cfce52.png"
+    "revision": "6f55d2ed648f4a48c2b20c8cb033515b",
+    "url": "/holiDayCloud/static/media/woman.6f55d2ed.png"
   },
   {
-    "revision": "01555d37b1b58d6b0dc1ea9281d2d9cb",
-    "url": "/holiDayCloud/static/media/woman2.01555d37.png"
+    "revision": "c85f7537d763e2d9b54aed5abc102c7a",
+    "url": "/holiDayCloud/static/media/woman1.c85f7537.png"
   },
   {
-    "revision": "75b499313be7e83c15e4abcf6a2814a8",
-    "url": "/holiDayCloud/static/media/woman3.75b49931.png"
+    "revision": "24c5874b28dfcf832bb072ca8415e90b",
+    "url": "/holiDayCloud/static/media/woman2.24c5874b.png"
   },
   {
-    "revision": "758df72a8a903632a0496b66d73e5891",
-    "url": "/holiDayCloud/static/media/woman4.758df72a.png"
+    "revision": "ca826c0f6e38c9ede54cedfdf9952012",
+    "url": "/holiDayCloud/static/media/woman3.ca826c0f.png"
   },
   {
-    "revision": "107b26fadf3553947d95674f4b224087",
-    "url": "/holiDayCloud/static/media/woman6.107b26fa.png"
+    "revision": "58867a1a7f00c23ff1a371b87350d457",
+    "url": "/holiDayCloud/static/media/woman4.58867a1a.png"
+  },
+  {
+    "revision": "9c86c05b7bd6087085c8da192b6be252",
+    "url": "/holiDayCloud/static/media/woman5.9c86c05b.png"
+  },
+  {
+    "revision": "cae7dd64f14ea230203df65241ec14db",
+    "url": "/holiDayCloud/static/media/woman6.cae7dd64.png"
   }
 ]);
