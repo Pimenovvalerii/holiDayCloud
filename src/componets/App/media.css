@@ -52,8 +52,10 @@
         position: fixed;
         top: 0;
         left: 0;
+        right: 0;
+        bottom: 0; 
+        max-width: none;
         width: 100%;
-        height: 100%;
         border-radius: 0;
         padding: 0;
         display: flex;
@@ -61,6 +63,15 @@
         align-items: center; 
         background: url('../../images/main-image.jpg') right center;
         background-size: cover;
+    }
+    .return_button{
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        right: 30px;
+        top: 20px;
+        border-radius: 50%;
+        color: antiquewhite;
     }
     .close__login_form,.close__registration_for, 
     .close__todos,.close__settings_for {
@@ -72,9 +83,25 @@
     .regist__input,.login__input {
         padding: 10px;
         margin: 20px;
-        background-color: rgba(255, 255, 255, 0.3);
+        background-color: #679874de;
         box-shadow:         0px 0px 30px 0px rgba(103,152,116,1);
     } 
+    .login__input input,.regist__input input, .registration_form-wrapper .regist__checkbox div label{
+        color: antiquewhite;
+    }
+    .registration_form-wrapper .regist__checkbox div{
+        background-color: #679874de;
+        padding: 5px;
+        border-radius: 12px;
+        
+    }
+    .registration_form-wrapper .regist__checkbox div label{
+        margin: 5px;    
+    }
+    .regist__button, .login__button,.settings__input ,.settings__button{
+        background-color: #679874de;
+        color: antiquewhite;
+    }
 
     .wrapper_npm_phone div {
         top: 18px;
@@ -95,7 +122,7 @@
         position: none;
     }
 
-    .todos,.settings   {
+    .todos, .settings {
         position: fixed;
         top: 0;
         left: 0;
@@ -105,18 +132,14 @@
         padding: 0;
         background: url('../../images/main-image.jpg') right center;
         background-size: cover;
-        color: rgb(248, 187, 107);
     }
 
     .search-input,.search-input::placeholder,.settings__input input,
     .settings__input input::placeholder{
-        color: rgb(248, 187, 107);
+        color:antiquewhite;
     }
 
-    .settings__input ,.settings__button {
-        background-color: rgba(255, 255, 255, 0.2);
-        color: rgb(248, 187, 107);
-    }
+    
 
     .settings_wrapper{
         height: 100%;
@@ -131,7 +154,7 @@
 
     .my__event, .all-event {
         height: 100%;
-        background-color: rgba(255, 255, 255, 0.4); 
+        background-color:  #679874c5; 
     }
 
     .todo-list {
@@ -140,13 +163,14 @@
     }
     .todos-header-item {
         background-color: rgba(255, 255, 255, 0.4); 
-        color: rgb(248, 187, 107);
         
     }
 
     .todos-header-item:nth-child(1),.todos-header-item:nth-child(2) {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
+        background-color:  #679874c5; 
+
     }
 
     .add_event_icon{
@@ -154,7 +178,8 @@
     }
 
     .add_event_button {
-        /* background-color: rgba(255, 255, 255, 0.4);  */
+       align-items: center;
+       justify-content: center;
     }
 
     .menu ,.menu.active{

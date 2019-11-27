@@ -11,7 +11,6 @@ export default class App extends React.Component {
     render(){
 
         
-        console.log('App component is rendered with',this.props.objUser )
         return (
             <div className="app">
                 <Header  
@@ -19,17 +18,6 @@ export default class App extends React.Component {
                     {...this.props}
                    
                 />
-                {/* <div onClick={ ()=>{
-                    const users = JSON.parse(localStorage.getItem('users')) 
-                    if(users.user !== null){
-                        users.user = null
-                        localStorage.setItem('users', JSON.stringify(users))
-                        localStorage.removeItem(this.props.objUser.phone)
-                        this.props.exit()
-                    }  
-                }}>
-                    Удалить учетку
-                </div> */}
                 <Main 
                     {...this.props}
                 />

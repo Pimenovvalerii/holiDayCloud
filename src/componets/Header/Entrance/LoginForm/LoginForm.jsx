@@ -14,10 +14,6 @@ export default class LoginForm extends React.Component {
             phoneLogin : null,
             passwordLogin : null,
             error:null,
-            // userPhone: null,
-
-            // phone: null,
-            // password: null,
         }
         this.toComeIn = this.toComeIn.bind(this)
     }
@@ -45,28 +41,22 @@ export default class LoginForm extends React.Component {
                 const user = JSON.parse(localStorage.getItem(phoneLogin))
                 const password = user.password
                 if(password === passwordLogin){
-                    console.log('заходите')
                     localStorage.setItem(`users`, JSON.stringify({ user: phoneLogin }));
                     this.props.exit()
                     this.props.closeLoginForm()
                 }else{
                     this.setState({error :'неверный пароль или логин'})
-                    console.log('пароль не верный ')
                 }
                 
                 
             } else{
-                console.log('в лк нету user')
                 readBin(this._id)
                 .then( result => {
     
                     const arr = result.users.filter( el => {
                         return el.phone === phoneLogin
                     })
-                    // console.log(arr)
-    
                     if(arr.length !== 0){
-                        // console.log(arr)
                         if(arr[0].password === passwordLogin){
                             console.log(arr[0].password)
                             const localStorKey = arr[0].phone;
@@ -76,12 +66,10 @@ export default class LoginForm extends React.Component {
                             this.props.closeLoginForm()
                         } else {
                             this.setState({error :'Неверный пароль или логин'})
-                            console.log('неверный пароль')
                         }
                          
                     } else {
                         this.setState({error :'Такой пользователь не зарегистрирован'})                           
-                        console.log('такой пользователь не зарегистрирован')
                     }
                 })
             }

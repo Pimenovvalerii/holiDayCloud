@@ -1,6 +1,6 @@
 .settings {
     width: 320px;
-    height: 100%;
+    /* height: 100%; */
     position: absolute;
     top: 40%;
     left: 99%;
@@ -41,7 +41,7 @@
 }
 
 .settings__input input::placeholder{
-    color: antiquewhite;
+    color: rgb(28, 58, 31);
 }
 
 .regist__checkbox {

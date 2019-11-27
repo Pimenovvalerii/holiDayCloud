@@ -33,7 +33,7 @@
     left: 0;
     right: 0;
     margin: auto;
-    background-color: #fff;
+    background-color: antiquewhite;
     transition: transform 0.3s ease, opacity 0.1s ease 0.1s;
   }
   .menu span i:nth-child(1) {

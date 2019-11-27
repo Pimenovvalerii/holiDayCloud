@@ -8,6 +8,8 @@
     background: radial-gradient(circle, rgba(103,152,116,1) 29%, rgba(50,98,64,1) 69%);
     z-index: 1;
     box-sizing: border-box;
+    color: antiquewhite;
+
 }
 
 .registration_form-wrapper {
@@ -60,6 +62,7 @@
     text-align: center;
     padding-top: 5px;
     cursor: pointer;
+    color: antiquewhite;
 }
 
 .regist__input input::placeholder{
@@ -95,6 +98,8 @@
 .regist__button {
     -webkit-animation: regist__button 2s linear infinite;
     animation: regist__button 5s linear infinite;
+    color: antiquewhite;
+
 }
 @-webkit-keyframes regist__button {
     0% { box-shadow:         0px 0px 30px 0px rgba(103,152,116,1); }

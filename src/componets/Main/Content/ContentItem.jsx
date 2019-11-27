@@ -7,9 +7,6 @@ function ContentItem (props){
     const { label,name, surname, data, textarea, image} = props.event;
     const date = new Date(data);
     const options = { weekday: 'long',  month: 'long', day: 'numeric' };
-    console.log(data)
-    console.log(props.event.data)
-
     const thisYear = new Date().getFullYear();
     const userAge = thisYear - new Date(data).getFullYear();
     let eventIcon = defaulIcon;
