@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/holiDayCloud/static/css/main.41541bb7.chunk.css",
-    "main.js": "/holiDayCloud/static/js/main.103e92b4.chunk.js",
-    "main.js.map": "/holiDayCloud/static/js/main.103e92b4.chunk.js.map",
+    "main.css": "/holiDayCloud/static/css/main.cb3f9bec.chunk.css",
+    "main.js": "/holiDayCloud/static/js/main.b16c0f24.chunk.js",
+    "main.js.map": "/holiDayCloud/static/js/main.b16c0f24.chunk.js.map",
     "runtime-main.js": "/holiDayCloud/static/js/runtime-main.2f1595f3.js",
     "runtime-main.js.map": "/holiDayCloud/static/js/runtime-main.2f1595f3.js.map",
     "static/css/2.b2cf126a.chunk.css": "/holiDayCloud/static/css/2.b2cf126a.chunk.css",
     "static/js/2.379d1753.chunk.js": "/holiDayCloud/static/js/2.379d1753.chunk.js",
     "static/js/2.379d1753.chunk.js.map": "/holiDayCloud/static/js/2.379d1753.chunk.js.map",
     "index.html": "/holiDayCloud/index.html",
-    "precache-manifest.73bc73bb29611949d9c3afe59e73d41c.js": "/holiDayCloud/precache-manifest.73bc73bb29611949d9c3afe59e73d41c.js",
+    "precache-manifest.1e5d3732aaf9df5007c20a19d1d30a4d.js": "/holiDayCloud/precache-manifest.1e5d3732aaf9df5007c20a19d1d30a4d.js",
     "service-worker.js": "/holiDayCloud/service-worker.js",
     "static/css/2.b2cf126a.chunk.css.map": "/holiDayCloud/static/css/2.b2cf126a.chunk.css.map",
-    "static/css/main.41541bb7.chunk.css.map": "/holiDayCloud/static/css/main.41541bb7.chunk.css.map",
+    "static/css/main.cb3f9bec.chunk.css.map": "/holiDayCloud/static/css/main.cb3f9bec.chunk.css.map",
     "static/media/baby.png": "/holiDayCloud/static/media/baby.451e2e83.png",
     "static/media/big-woman.png": "/holiDayCloud/static/media/big-woman.f6e1d92b.png",
     "static/media/child-boy.png": "/holiDayCloud/static/media/child-boy.abc05a53.png",
@@ -40,7 +40,7 @@
     "static/js/runtime-main.2f1595f3.js",
     "static/css/2.b2cf126a.chunk.css",
     "static/js/2.379d1753.chunk.js",
-    "static/css/main.41541bb7.chunk.css",
-    "static/js/main.103e92b4.chunk.js"
+    "static/css/main.cb3f9bec.chunk.css",
+    "static/js/main.b16c0f24.chunk.js"
   ]
 }

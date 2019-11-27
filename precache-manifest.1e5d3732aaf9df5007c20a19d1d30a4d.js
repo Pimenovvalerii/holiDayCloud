@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3a716132d4301bcb1c23061868f0e110",
+    "revision": "33409b8dfc3f257431480e00ac5a5b28",
     "url": "/holiDayCloud/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/holiDayCloud/static/css/2.b2cf126a.chunk.css"
   },
   {
-    "revision": "b160aabc71cb651d4ad8",
-    "url": "/holiDayCloud/static/css/main.41541bb7.chunk.css"
+    "revision": "e446dbc821caf8caf068",
+    "url": "/holiDayCloud/static/css/main.cb3f9bec.chunk.css"
   },
   {
     "revision": "7c6cb0edfd5e84c47eab",
     "url": "/holiDayCloud/static/js/2.379d1753.chunk.js"
   },
   {
-    "revision": "b160aabc71cb651d4ad8",
-    "url": "/holiDayCloud/static/js/main.103e92b4.chunk.js"
+    "revision": "e446dbc821caf8caf068",
+    "url": "/holiDayCloud/static/js/main.b16c0f24.chunk.js"
   },
   {
     "revision": "156247f3d5357177c46e",
