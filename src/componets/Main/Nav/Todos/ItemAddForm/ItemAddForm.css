@@ -25,7 +25,7 @@
 }
 
 .itemAddForm__input input::placeholder {
-  color: antiquewhite;
+  color: rgb(28, 58, 31);
 }
 
 .male-female{
@@ -47,6 +47,16 @@
 .male-female-box div span {
   margin-right: 10px;
 }
+
+.itemAddForm form div textarea{
+  overflow: auto;
+  width: 100%;
+  resize: none;
+  border-radius: 12px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
 
 .itemAddForm-button {
   display: block;
