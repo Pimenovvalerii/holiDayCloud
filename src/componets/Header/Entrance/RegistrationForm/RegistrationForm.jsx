@@ -2,6 +2,7 @@ import React from 'react';
 import './RegistrationForm.css';
 import ReturnButton from '../../../ReturnButton';
 import {updateBin , readBin } from '../../../../apiJSONBin';
+import NumberFormat from 'react-number-format';
 
 
 export default class RegistrationForm extends React.Component {
@@ -140,11 +141,12 @@ export default class RegistrationForm extends React.Component {
                         <div className="regist__error">
                             {this.state.error }
                         </div>
-                        <div className="regist__input blink3">
-                            
-                            <input onChange={this.onChangePhone} 
-                                    placeholder="Телефон"
-                                    required/>
+                        
+                        <div className="wrapper_npm_phone regist__input blink3">
+                            <div>+380</div>
+                            <NumberFormat format=" (##) ###-##-##" mask="_" 
+                                            onChange={this.onChangePhone} 
+                                            placeholder="Телефон"/>
                         </div>
 
                         <div className="regist__input blink4">
