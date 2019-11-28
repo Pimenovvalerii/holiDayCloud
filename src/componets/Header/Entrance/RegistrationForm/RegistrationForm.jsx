@@ -84,7 +84,7 @@ export default class RegistrationForm extends React.Component {
     onSubmitFn(){
         const {phone} = this.state;
         const {name,surname,password,data,image} = this.state;
-
+        
         if(name !== null && surname !== null && password !== null && data !== null && image !== null && phone !== null){
             readBin(this._id)
             .then( result => {
@@ -113,9 +113,9 @@ export default class RegistrationForm extends React.Component {
         } else{
             this.setState({error :'Заполните все поля'})
         }
-            
-        
     }
+    
+    
 
     render(){
         return(

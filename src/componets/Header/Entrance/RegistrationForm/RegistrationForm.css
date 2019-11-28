@@ -6,7 +6,7 @@
     padding: 20px;
     border-radius: 15px;
     background: radial-gradient(circle, rgba(103,152,116,1) 29%, rgba(50,98,64,1) 69%);
-    z-index: 1;
+    z-index: 2;
     box-sizing: border-box;
     color: antiquewhite;
 

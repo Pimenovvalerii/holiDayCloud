@@ -60,13 +60,13 @@
   }
 
   .menu {
-    height: 70px;
+    min-height: 70px;
     width:  calc(100% - 140px);
     right: 105px;
     top: 20px;
     position: absolute;
     background: transparent;
-    overflow: hidden;
+    /* overflow: hidden; */
     z-index: 1;
   }
   .menu .menuContent  {

@@ -42,7 +42,7 @@ export default class Entrance extends React.Component {
 
         return(
             <div   
-                    hidden={this.props.hidden}
+                hidden={this.props.hidden}
             > 
                 <div className="entrance">
                 <div hidden={!this.state.registration}>
