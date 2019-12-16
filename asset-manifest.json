@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/holiDayCloud/static/css/main.74c68e09.chunk.css",
-    "main.js": "/holiDayCloud/static/js/main.103e92b4.chunk.js",
-    "main.js.map": "/holiDayCloud/static/js/main.103e92b4.chunk.js.map",
+    "main.js": "/holiDayCloud/static/js/main.549daa75.chunk.js",
+    "main.js.map": "/holiDayCloud/static/js/main.549daa75.chunk.js.map",
     "runtime-main.js": "/holiDayCloud/static/js/runtime-main.2f1595f3.js",
     "runtime-main.js.map": "/holiDayCloud/static/js/runtime-main.2f1595f3.js.map",
     "static/css/2.b2cf126a.chunk.css": "/holiDayCloud/static/css/2.b2cf126a.chunk.css",
     "static/js/2.379d1753.chunk.js": "/holiDayCloud/static/js/2.379d1753.chunk.js",
     "static/js/2.379d1753.chunk.js.map": "/holiDayCloud/static/js/2.379d1753.chunk.js.map",
     "index.html": "/holiDayCloud/index.html",
-    "precache-manifest.536459ffc5e6aa495000024e7437ed59.js": "/holiDayCloud/precache-manifest.536459ffc5e6aa495000024e7437ed59.js",
+    "precache-manifest.8d8a97b6dfad2f457ffdfa0b696e10cc.js": "/holiDayCloud/precache-manifest.8d8a97b6dfad2f457ffdfa0b696e10cc.js",
     "service-worker.js": "/holiDayCloud/service-worker.js",
     "static/css/2.b2cf126a.chunk.css.map": "/holiDayCloud/static/css/2.b2cf126a.chunk.css.map",
     "static/css/main.74c68e09.chunk.css.map": "/holiDayCloud/static/css/main.74c68e09.chunk.css.map",
@@ -41,6 +41,6 @@
     "static/css/2.b2cf126a.chunk.css",
     "static/js/2.379d1753.chunk.js",
     "static/css/main.74c68e09.chunk.css",
-    "static/js/main.103e92b4.chunk.js"
+    "static/js/main.549daa75.chunk.js"
   ]
 }
